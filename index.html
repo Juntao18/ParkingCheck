@@ -159,26 +159,181 @@
       {
         id: 1,
         name: "Car Park 1",
+        permit:"MU Student",
         x: 1056,     // 实际X坐标
         y: 3084,    // 实际Y坐标
-        capacity: 200,
-        available: 180
+        capacity: 50,
+        available: 30
       },
       {
         id: 2,
         name: "Car Park 2",
+        permit:"Pay and Display",
         x: 1097,
         y: 2711,
-        capacity: 150,
-        available: 50
+        capacity: 8,
+        available: 1
       },
       {
         id: 3,
-        name: "Sports Center Parking",
+        name: "Car Park 3",
+        permit:"Multi-Permit",
         x: 919,
         y: 2497,
-        capacity: 100,
+        capacity: 5,
+        available: 0
+      },
+      {
+        id: 3-1,
+        name: "Car Park 3a",
+        permit:"Multi-Permit",
+        x: 645,
+        y: 2283,
+        capacity: 50,
+        available: 45
+      },
+      {
+        id: 4,
+        name: "Car Park 4",
+        permit:"Multi-Permit",
+        x: 1097,
+        y: 2270,
+        capacity: 50,
+        available: 30
+      },
+      {
+        id: 5,
+        name: "Car Park 5",
+        permit:"Restricted",
+        x: 1431,
+        y: 2244,
+        capacity: 10,
         available: 10
+      },
+      {
+        id: 5-1,
+        name: "Car Park 5a",
+        permit:"Multi-Permit",
+        x: 1437,
+        y: 2331,
+        capacity: 30,
+        available: 0
+      },
+      {
+        id: 6-1,
+        name: "Car Park 6a",
+        permit:"Multi-Permit",
+        x: 1405,
+        y: 1857,
+        capacity: 30,
+        available: 0
+      },
+      {
+        id: 6-2,
+        name: "Car Park 6b",
+        permit:"MU Student",
+        x: 1636,
+        y: 1912,
+        capacity: 10,
+        available: 0
+      },
+      {
+        id: 6-3,
+        name: "Car Park 6b",
+        permit:"MU Student",
+        x: 1802,
+        y: 2008,
+        capacity: 10,
+        available: 5
+      },
+      {
+        id: 6-4,
+        name: "Car Park 6c",
+        permit:"MU Student",
+        x: 1970,
+        y: 22376,
+        capacity: 10,
+        available: 1
+      },
+      {
+        id: 8,
+        name: "Car Park 8",
+        permit:"MU Staff",
+        x: 1869,
+        y: 2413,
+        capacity: 30,
+        available: 5
+      },
+      {
+        id: 9-1,
+        name: "Car Park 9",
+        permit:"Pay and Display",
+        x: 2005,
+        y: 2496,
+        capacity: 10,
+        available: 8
+      },
+      {
+        id: 9-2,
+        name: "Car Park 9",
+        permit:"Car Share/Pooling",
+        x: 2076,
+        y: 2649,
+        capacity: 30,
+        available: 0
+      },
+      {
+        id: 9-3,
+        name: "Car Park 9",
+        permit:"Multi-Permit",
+        x: 2181,
+        y: 2876,
+        capacity: 80,
+        available: 50
+      },
+      {
+        id: 10,
+        name: "Car Park 10",
+        permit:"MU Staff",
+        x: 1928,
+        y: 2691,
+        capacity: 10,
+        available: 5
+      },
+      {
+        id: 11,
+        name: "Car Park 11",
+        permit:"MU Staff",
+        x: 1831,
+        y: 2732,
+        capacity: 10,
+        available: 5
+      },
+      {
+        id: 12,
+        name: "Car Park 12",
+        permit:"MU Staff",
+        x: 2017,
+        y: 2883,
+        capacity: 10,
+        available: 5
+      },
+      {
+        id: 13,
+        name: "Car Park 13",
+        permit:"MU Staff",
+        x: 1862,
+        y: 2811,
+        capacity: 10,
+        available: 5
+      },
+      {
+        id: 14,
+        name: "Car Park 14",
+        x: 1966,
+        y: 3019,
+        capacity: 50,
+        available: 40
       }
     ];
     /****************** 配置参数 END ******************/
@@ -234,9 +389,11 @@
       infoWindow.innerHTML = 
         '<div class="close-button" onclick="closeInfoWindow()">×</div>' +
         '<h3>' + data.name + '</h3>' +
-        '<p>总车位: ' + data.capacity + '</p>' +
-        '<p>可用车位: ' + data.available + '</p>' +
-        '<p>占用率: ' + Math.round((1 - data.available / data.capacity) * 100) + '%</p>';
+        '<p>Permit: ' + data.permit + '</p>' +
+        '<p>All Space: ' + data.capacity + '</p>' +
+        '<p>Available: ' + data.available + '</p>' +
+        '<p>Available: ' + Math.round((1 - data.available / data.capacity) * 100) + '%</p>'+
+        '<button>Directions</button>';
 
       // 将信息窗口添加到 body 而非 map-container
       document.body.appendChild(infoWindow);
