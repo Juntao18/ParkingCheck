@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Maynooth University Parking</title>
+  <style>
+    /* 基础样式 */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+      background: #f5f5f5;
+    }
+
+    /* 顶部导航栏（仅保留标题） */
+    .nav-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5em;
+      color: #1a237e;
+    }
+
+    /* 地图容器 */
+    #map-wrapper {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow: hidden;
+      background: #f0f0f0;
+    }
+
+    #map-container {
+      position: relative;
+      width: 4000px;    /* 根据实际地图宽度修改 */
+      height: 4800px;   /* 根据实际地图高度修改 */
+      background-image: url('university-map.webp');
+      background-size: contain;
+      transform-origin: 0 0;
+      cursor: grab;
+    }
+
+    /* 热力图点样式 */
+    .heat-point {
+      position: absolute;
+      width: 100px;      /* 热力点大小 */
+      height: 95px;
+      border-radius: 50%;
+      border: 2px solid white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      opacity: 0.85;
+      cursor: pointer;
+      transform: translate(-50%, -50%);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: translate(-50%, -50%) scale(1); }
+      50% { transform: translate(-50%, -50%) scale(1.1); }
+      100% { transform: translate(-50%, -50%) scale(1); }
+    }
+
+    /* 信息框样式 */
+    .info-window {
+      position: fixed;
+      background: #ffffff;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      z-index: 1001;
+      max-width: 320px;
+      pointer-events: auto;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .info-window h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .info-window p {
+      margin: 5px 0;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 18px;
+    }
+
+    /* 导航按钮在信息框内部 */
+    .direction-button {
+      background-color: #4285F4;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+      margin-top: 15px;
+      width: 100%;
+    }
+    .direction-button:disabled {
+      background-color: #aaa;
+      cursor: not-allowed;
+    }
+
+    /* 加载动画 */
+    .loading {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.5em;
+      z-index: 2000;
+      background: rgba(255,255,255,0.9);
+      padding: 15px 30px;
+      border-radius: 8px;
+    }
+
+    /* 响应式设计：移动端时信息框固定于底部居中，宽度占满，覆盖屏幕底部一半 */
+    @media (max-width: 768px) {
+      .info-window {
+        left: 0 !important;
+        right: 0 !important;
+        top: auto !important;
+        bottom: 0 !important;
+        width: 100% !important;
+        height: 50% !important;
+        border-radius: 20px 20px 0 0;
+        font-size: 16px;
+        overflow-y: auto;
+        padding: 20px;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 顶部导航栏，仅显示标题 -->
+  <nav class="nav-bar">
+    Maynooth University Parking
+  </nav>
+
+  <!-- 加载提示 -->
+  <div class="loading">Map loading...</div>
+
+  <!-- 地图容器 -->
+  <div id="map-wrapper">
+    <div id="map-container"></div>
+  </div>
+
+  <script>
+    // 学校中心坐标（需要根据实际地图修改）
+    var SCHOOL_CENTER_X = 1517; // 学校区域中心X像素坐标
+    var SCHOOL_CENTER_Y = 2700; // 学校区域中心Y像素坐标
+
+    // 地图参数
+    var MAP_WIDTH = 4000;       // 地图实际宽度
+    var MAP_HEIGHT = 4800;      // 地图实际高度
+
+    // 初始缩放比例
+    var INIT_SCALE = 0.6;
+
+    // 停车场数据（后期可替换为数据库数据），每个停车场预留了导航链接属性（目前部分为空，后续补充）
+    var parkingData = [
+      {
+        id: 1,
+        name: "Car Park 1",
+        permit: "MU Student",
+        x: 1056,
+        y: 3084,
+        capacity: 50,
+        available: 30,
+        gmaps: "https://maps.app.goo.gl/54hkpHb5stybbe969"
+      },
+      {
+        id: 2,
+        name: "Car Park 2",
+        permit: "Pay and Display",
+        x: 1097,
+        y: 2711,
+        capacity: 8,
+        available: 1,
+        gmaps: "https://maps.app.goo.gl/pHvRUgdXpLwS7ht28"
+      },
+      {
+        id: 3,
+        name: "Car Park 3",
+        permit: "Multi-Permit",
+        x: 919,
+        y: 2497,
+        capacity: 5,
+        available: 0,
+        gmaps: "https://maps.app.goo.gl/EacEkeQV5uRygj939"
+      },
+      {
+        id: "3-1",
+        name: "Car Park 3a",
+        permit: "Multi-Permit",
+        x: 645,
+        y: 2283,
+        capacity: 50,
+        available: 45,
+        gmaps: "https://maps.app.goo.gl/oL82tgctgm3cA6Ru7"
+      },
+      {
+        id: 4,
+        name: "Car Park 4",
+        permit: "Multi-Permit",
+        x: 1097,
+        y: 2270,
+        capacity: 50,
+        available: 30,
+        gmaps: "https://maps.app.goo.gl/VT2spo7aBQr2nWnp6"
+      },
+      {
+        id: 5,
+        name: "Car Park 5",
+        permit: "Restricted",
+        x: 1431,
+        y: 2244,
+        capacity: 10,
+        available: 10,
+        gmaps: "https://maps.app.goo.gl/5ZqHcHU8dHCL9omQ6"
+      },
+      {
+        id: "5-1",
+        name: "Car Park 5a",
+        permit: "Multi-Permit",
+        x: 1437,
+        y: 2331,
+        capacity: 30,
+        available: 0,
+        gmaps: "https://maps.app.goo.gl/5ZqHcHU8dHCL9omQ6"
+      },
+      {
+        id: "6-1",
+        name: "Car Park 6a",
+        permit: "Multi-Permit",
+        x: 1405,
+        y: 1857,
+        capacity: 30,
+        available: 0,
+        gmaps: "https://maps.app.goo.gl/JQ8wnGMAe72GrhPY8"
+      },
+      {
+        id: "6-2",
+        name: "Car Park 6b",
+        permit: "MU Student",
+        x: 1636,
+        y: 1912,
+        capacity: 10,
+        available: 0,
+        gmaps: "https://maps.app.goo.gl/PWadJ7zpQgZARLWb8"
+      },
+      {
+        id: "6-3",
+        name: "Car Park 6b",
+        permit: "MU Student",
+        x: 1802,
+        y: 2008,
+        capacity: 10,
+        available: 5,
+        gmaps: "https://maps.app.goo.gl/PWadJ7zpQgZARLWb8"
+      },
+      {
+        id: "6-4",
+        name: "Car Park 6c",
+        permit: "MU Student",
+        x: 1970,
+        y: 22376,
+        capacity: 10,
+        available: 1,
+        gmaps: "https://maps.app.goo.gl/ifbQ2CBLKeWV78gy5"
+      },
+      {
+        id: 8,
+        name: "Car Park 8",
+        permit: "MU Staff",
+        x: 1869,
+        y: 2413,
+        capacity: 30,
+        available: 5,
+        gmaps: "https://maps.app.goo.gl/zGapW7rbYUcYMVVV8"
+      },
+      {
+        id: "9-1",
+        name: "Car Park 9",
+        permit: "Pay and Display",
+        x: 2005,
+        y: 2496,
+        capacity: 10,
+        available: 8,
+        gmaps: "https://maps.app.goo.gl/fSGKgHAt4UbDwCue8"
+      },
+      {
+        id: "9-2",
+        name: "Car Park 9",
+        permit: "Car Share/Pooling",
+        x: 2076,
+        y: 2649,
+        capacity: 30,
+        available: 0,
+        gmaps: "https://maps.app.goo.gl/fSGKgHAt4UbDwCue8"
+      },
+      {
+        id: "9-3",
+        name: "Car Park 9",
+        permit: "Multi-Permit",
+        x: 2181,
+        y: 2876,
+        capacity: 80,
+        available: 50,
+        gmaps: "https://maps.app.goo.gl/fSGKgHAt4UbDwCue8"
+      },
+      {
+        id: 10,
+        name: "Car Park 10",
+        permit: "MU Staff",
+        x: 1928,
+        y: 2691,
+        capacity: 10,
+        available: 5,
+        gmaps: "https://maps.app.goo.gl/eKXD5QxiSh1kSVY36"
+      },
+      {
+        id: 11,
+        name: "Car Park 11",
+        permit: "MU Staff",
+        x: 1831,
+        y: 2732,
+        capacity: 10,
+        available: 5,
+        gmaps: "https://maps.app.goo.gl/Pv3orxayiP1vnaSp8"
+      },
+      {
+        id: 12,
+        name: "Car Park 12",
+        permit: "MU Staff",
+        x: 2017,
+        y: 2883,
+        capacity: 10,
+        available: 5,
+        gmaps: "https://maps.app.goo.gl/U3CKXoXdrHHP4yWv9"
+      },
+      {
+        id: 13,
+        name: "Car Park 13",
+        permit: "MU Staff",
+        x: 1862,
+        y: 2811,
+        capacity: 10,
+        available: 5,
+        gmaps: "https://maps.app.goo.gl/ZvPgzsZzwKer5c6XA"
+      },
+      {
+        id: 14,
+        name: "Car Park 14",
+        x: 1966,
+        y: 3019,
+        capacity: 50,
+        available: 40,
+        gmaps: "https://maps.app.goo.gl/9rj2gefWj6Y2WyzDA"
+      }
+    ];
+    /****************** 配置参数 END ******************/
+
+    // 地图控制变量
+    var scale = INIT_SCALE;
+    var posX = 0;
+    var posY = 0;
+    var isDragging = false;
+    var startX, startY;
+
+    // 初始化地图：在地图上创建所有热力图点
+    function initializeMap() {
+      var container = document.getElementById('map-container');
+      parkingData.forEach(function(parking) {
+        var heatPoint = createHeatPoint(parking);
+        container.appendChild(heatPoint);
+      });
+    }
+
+    // 创建热力图点元素
+    function createHeatPoint(data) {
+      var heatPoint = document.createElement('div');
+      heatPoint.className = 'heat-point';
+      heatPoint.style.left = data.x + 'px';
+      heatPoint.style.top = data.y + 'px';
+      updateHeatPointColor(heatPoint, data);
+      // 点击时显示信息框
+      heatPoint.addEventListener('click', function(event) {
+        event.stopPropagation();
+        showInfoWindow(data, event.clientX, event.clientY);
+      });
+      return heatPoint;
+    }
+
+    // 更新热力图点颜色（依据占用率）
+    function updateHeatPointColor(element, data) {
+      var ratio = data.available / data.capacity;
+      element.style.backgroundColor = ratio > 0.6 ? '#4CAF50' :
+                                        ratio > 0.3 ? '#FFEB3B' : '#F44336';
+    }
+
+    // 显示信息窗口：信息框添加到 document.body 中
+    function showInfoWindow(data, x, y) {
+      closeInfoWindow();
+      var infoWindow = document.createElement('div');
+      infoWindow.className = 'info-window';
+      // 始终预留导航按钮，若有有效链接则启用，否则按钮为禁用状态
+      infoWindow.innerHTML =
+        '<div class="close-button" onclick="closeInfoWindow()">×</div>' +
+        '<h3>' + data.name + '</h3>' +
+        '<p>Permit: ' + (data.permit || 'N/A') + '</p>' +
+        '<p>All Space: ' + data.capacity + '</p>' +
+        '<p>Available: ' + data.available + '</p>' +
+        '<p>Occupancy: ' + Math.round((1 - data.available / data.capacity) * 100) + '%</p>' +
+        '<button class="direction-button" ' + (data.gmaps ? '' : 'disabled') + '>Directions</button>';
+      
+      document.body.appendChild(infoWindow);
+      
+      // 针对移动端强制调整信息框位置（覆盖屏幕底部一半，水平居中）
+      if (window.innerWidth <= 768) {
+        infoWindow.style.left = '0';
+        infoWindow.style.right = '0';
+        infoWindow.style.top = 'auto';
+        infoWindow.style.bottom = '0';
+        infoWindow.style.width = '100%';
+        infoWindow.style.height = '50%';
+        infoWindow.style.margin = '0';
+        infoWindow.style.transform = 'none';
+      } else {
+        adjustInfoPosition(infoWindow, x, y);
+      }
+      
+      // 为导航按钮添加事件
+      var dirBtn = infoWindow.querySelector('.direction-button');
+      if (dirBtn) {
+        dirBtn.addEventListener('click', function(event) {
+          event.stopPropagation();
+          if(data.gmaps) {
+            window.open(data.gmaps, '_blank');
+          }
+        });
+      }
+      
+      // 延时绑定点击外部关闭信息窗口事件
+      setTimeout(function() {
+        document.addEventListener('click', closeInfoWindow);
+      }, 10);
+    }
+
+    // 调整非移动端信息窗口的位置，确保不超出屏幕边界
+    function adjustInfoPosition(element, x, y) {
+      var rect = element.getBoundingClientRect();
+      x = Math.max(10, Math.min(x, window.innerWidth - rect.width - 10));
+      y = Math.max(10, Math.min(y, window.innerHeight - rect.height - 10));
+      element.style.left = x + 'px';
+      element.style.top = y + 'px';
+    }
+
+    // 关闭所有信息窗口
+    function closeInfoWindow() {
+      var infoWindows = document.querySelectorAll('.info-window');
+      infoWindows.forEach(function(win) {
+        if (win.parentNode) {
+          win.parentNode.removeChild(win);
+        }
+      });
+      document.removeEventListener('click', closeInfoWindow);
+    }
+
+    // 初始化地图交互（拖动、缩放等）
+    function initMapInteraction() {
+      var container = document.getElementById('map-container');
+      container.addEventListener('mousedown', function(e) {
+        isDragging = true;
+        startX = e.clientX - posX;
+        startY = e.clientY - posY;
+        container.style.cursor = 'grabbing';
+      });
+      document.addEventListener('mousemove', function(e) {
+        if (isDragging) {
+          posX = e.clientX - startX;
+          posY = e.clientY - startY;
+          applyMapTransform();
+        }
+      });
+      document.addEventListener('mouseup', function() {
+        isDragging = false;
+        container.style.cursor = 'grab';
+      });
+      container.addEventListener('touchstart', function(e) {
+        if (e.touches.length === 1) {
+          isDragging = true;
+          startX = e.touches[0].clientX - posX;
+          startY = e.touches[0].clientY - posY;
+        }
+      });
+      document.addEventListener('touchmove', function(e) {
+        if (isDragging && e.touches.length === 1) {
+          posX = e.touches[0].clientX - startX;
+          posY = e.touches[0].clientY - startY;
+          applyMapTransform();
+        }
+      });
+      document.addEventListener('touchend', function() {
+        isDragging = false;
+      });
+      container.addEventListener('wheel', function(e) {
+        e.preventDefault();
+        var delta = e.deltaY > 0 ? 0.9 : 1.1;
+        scale = Math.min(Math.max(0.5, scale * delta), 3);
+        applyMapTransform();
+      });
+    }
+
+    // 应用地图平移与缩放
+    function applyMapTransform() {
+      var maxX = (MAP_WIDTH * scale - window.innerWidth) * -1;
+      var maxY = (MAP_HEIGHT * scale - window.innerHeight + 60) * -1;
+      posX = Math.min(0, Math.max(posX, maxX));
+      posY = Math.min(0, Math.max(posY, maxY));
+      document.getElementById('map-container').style.transform =
+        'translate(' + posX + 'px, ' + posY + 'px) scale(' + scale + ')';
+    }
+
+    // 设置地图初始位置（以学校中心为基准）
+    function setInitialPosition() {
+      var centerX = SCHOOL_CENTER_X * scale;
+      var centerY = SCHOOL_CENTER_Y * scale;
+      posX = (window.innerWidth / 2 - centerX);
+      posY = (window.innerHeight / 2 - centerY);
+    }
+
+    // 页面加载初始化
+    window.addEventListener('load', function() {
+      setInitialPosition();
+      applyMapTransform();
+      initializeMap();
+      initMapInteraction();
+      document.querySelector('.loading').style.display = 'none';
+    });
+
+    // 窗口大小变化时重置地图位置与缩放
+    window.addEventListener('resize', function() {
+      setInitialPosition();
+      applyMapTransform();
+    });
+  </script>
+</body>
+</html>
