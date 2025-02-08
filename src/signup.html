@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | ParkingCheck</title>
+  <script type="module" src="index.js"></script>
+  <style>
+    /* 重置样式 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+    /* 背景图片 */
+    body {
+      background: url('login.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    /* Logo 样式 */
+    .logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .logo img {
+      width: 130px;
+      height: 60px;
+    }
+    /* 大屏桌面：Logo 固定在左上角 */
+    @media (min-width: 481px) {
+      .logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        margin-bottom: 0;
+        text-align: left;
+      }
+    }
+    /* 注册容器 */
+    .login-container {
+      background: rgba(255, 255, 255, 0.9);
+      width: 90%;
+      max-width: 400px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.158);
+    }
+    /* 注册框内标题 */
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .header h1 {
+      font-size: 28px;
+      color: #0073b1; /* LinkedIn蓝 */
+      margin-top: 10px;
+    }
+    /* 表单样式 */
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    form label {
+      margin-bottom: 5px;
+      font-size: 14px;
+      color: #333;
+    }
+    form input[type="email"],
+    form input[type="password"] {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    form button {
+      padding: 10px;
+      background-color: #0073b1;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #005983;
+    }
+    /* 选项链接：已有账号？登录 */
+    .options {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 18px;
+      color: #0073b1;
+    }
+    .options a {
+      text-decoration: none;
+      color: #0073b1;
+    }
+    .options a:hover {
+      text-decoration: underline;
+    }
+    /* 谷歌一键注册 */
+    .google-login {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .google-login button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 20px;  /* 边角更圆润 */
+      font-size: 16px;
+      cursor: pointer;
+      /* 若需要调整长度和宽度，可以直接添加如下属性，例如： */
+      width: 95%;
+      max-width: 400px;
+    }
+    .google-login button img {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+      
+    }
+    .google-login button:hover {
+      background-color: #f7f7f7;
+    }
+    /* 移动端适配 */
+    @media (max-width: 480px) {
+      .login-container {
+        padding: 15px;
+      }
+      .header h1 {
+        font-size: 20px;
+      }
+      form input[type="email"],
+      form input[type="password"] {
+        font-size: 14px;
+        padding: 8px;
+      }
+      form button, .google-login button {
+        font-size: 14px;
+        padding: 8px;
+      }
+      /* 移动端：Logo 居中显示且在注册框上方 */
+      .logo {
+        position: static;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Logo，桌面端在左上角，移动端显示在上方 -->
+  <div class="logo">
+    <a href="index.html"><img src="logo.webp" alt="Logo"></a>
+  </div>
+  <div class="login-container">
+    <!-- 注册框内标题 -->
+    <div class="header">
+      <h1>Sign Up</h1>
+    </div>
+    <!-- 注册表单 -->
+    <form onsubmit="register();return false;">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Please enter your email" required>
+      
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Please enter your password" required>
+      
+      <button type="submit">Join</button>
+    </form>  
+    <div class="options">
+        Already on MU? <a href="login.html">Sign in</a>
+    </div>
+    
+    <!-- 谷歌一键注册按钮 -->
+    <div class="google-login">
+      <button type="button">
+        <img src="G.png" alt="Google Logo">
+        Continue with Google
+      </button>
+    </div>
+  </div>
+</body>
+</html>

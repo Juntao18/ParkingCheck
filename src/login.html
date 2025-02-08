@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login|ParkingCheck</title>
+  <style>
+    /* 重置样式 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+    /* 背景图片 */
+    body {
+      background: url('login.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    /* Logo 样式 */
+    .logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .logo img {
+      width: 130px;
+      height: 60px;
+    }
+    /* 大屏桌面：Logo 固定在左上角 */
+    @media (min-width: 481px) {
+      .logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        margin-bottom: 0;
+        text-align: left;
+      }
+    }
+    /* 登录容器 */
+    .login-container {
+      background: rgba(255, 255, 255, 0.9);
+      width: 90%;
+      max-width: 400px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.158);
+    }
+    /* 登录框内标题 */
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .header h1 {
+      font-size: 28px;
+      color: #0073b1; /* LinkedIn蓝 */
+      margin-top: 10px;
+    }
+    /* 表单样式 */
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    form label {
+      margin-bottom: 5px;
+      font-size: 14px;
+      color: #333;
+    }
+    form input[type="email"],
+    form input[type="password"] {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    form button {
+      padding: 10px;
+      background-color: #0073b1;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #005983;
+    }
+    /* “忘记密码”与“注册”链接 */
+    .options {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+    .options a {
+      text-decoration: none;
+      font-size: 18px;
+      color: #0073b1;
+    }
+    .options a:hover {
+      text-decoration: underline;
+    }
+    /* 谷歌一键登录 */
+    .google-login {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .google-login button {
+        display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 20px;  /* 边角更圆润 */
+      font-size: 16px;
+      cursor: pointer;
+      /* 若需要调整长度和宽度，可以直接添加如下属性，例如： */
+      width: 95%;
+      max-width: 400px;
+    }
+    .google-login button img {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+    }
+    .google-login button:hover {
+      background-color: #f7f7f7;
+    }
+    /* 移动端适配 */
+    @media (max-width: 480px) {
+      .login-container {
+        padding: 15px;
+      }
+      .header h1 {
+        font-size: 20px;
+      }
+      form input[type="email"],
+      form input[type="password"] {
+        font-size: 14px;
+        padding: 8px;
+      }
+      form button, .google-login button {
+        font-size: 14px;
+        padding: 8px;
+      }
+      /* 移动端：Logo 居中显示且在登录框上方 */
+      .logo {
+        position: static;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Logo，桌面端在左上角，移动端显示在上方 -->
+  <div class="logo">
+    <a href="index.html"><img src="logo.webp" alt="Logo"></a>
+  </div>
+  <div class="login-container">
+    <!-- 登录框内标题 -->
+    <div class="header">
+      <h1>ParkingCheck</h1>
+    </div>
+    <!-- 登录表单 -->
+    <form onsubmit="login(); return false;">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Please enter your email" required>
+      
+      <label for="password">Password</label>
+      <input type="password" id="password"  placeholder="Please enter your password" required>
+      
+      <button type="submit">Sign in</button>
+      
+      <div class="options">
+        <a href="/forgot-password">Forgot password?</a>
+        <a href="signup.html">Sign up</a>
+      </div>
+    </form>
+    <!-- 谷歌一键登录按钮 -->
+    <div class="google-login">
+      <button type="button" onclick="googleLogin()">
+        <img src="G.png" alt="Google Logo">
+        Continue with Google
+      </button>
+    </div>
+  </div>
+
+  <!-- Firebase -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-auth.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyC_RFkbb9opYta3RgyCfO-RP0pVfcDNB94",
+      authDomain: "parkingcheck-83318.firebaseapp.com",
+      projectId: "parkingcheck-83318",
+      storageBucket: "parkingcheck-83318.firebasestorage.app",
+      messagingSenderId: "421752321656",
+      appId: "1:421752321656:web:d60ff23bdb5f226e85df8d",
+      measurementId: "G-5E42HCJV4B"
+    };
+
+    // 初始化 Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth(app);
+
+    // 登录函数
+    window.login = function() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          alert("登录成功！");
+          // 成功后可跳转或其他处理，例如：
+          // window.location.href = "/home.html";
+        })
+        .catch((error) => {
+          alert("登录错误：" + error.message);
+        });
+    };
+
+    // 忘记密码函数
+    window.resetPassword = function() {
+      const email = prompt("请输入您的注册邮箱：");
+      if (email) {
+        sendPasswordResetEmail(auth, email)
+          .then(() => {
+            alert("密码重置邮件已发送！");
+          })
+          .catch((error) => {
+            alert("发送重置邮件错误：" + error.message);
+          });
+      }
+    };
+
+    // 谷歌登录函数
+    window.googleLogin = function() {
+      const provider = new GoogleAuthProvider();
+      signInWithPopup(auth, provider)
+        .then((result) => {
+          alert("谷歌登录成功！");
+        })
+        .catch((error) => {
+          alert("谷歌登录错误：" + error.message);
+        });
+    };
+  </script>
+</body>
+</html>
