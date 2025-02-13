@@ -222,12 +222,11 @@
       const password = document.getElementById("password").value;
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-          alert("登录成功！");
           // 成功后可跳转或其他处理，例如：
-          // window.location.href = "/home.html";
+          window.location.href = "index.html";
         })
         .catch((error) => {
-          alert("登录错误：" + error.message);
+          alert("Sorry!" + error.message);
         });
     };
 

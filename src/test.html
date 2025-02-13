@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>MU|ParkingCheck</title>
+  <link rel="shortcut icon" href="//moodle.maynoothuniversity.ie/pluginfile.php/1/theme_catawesome/favicon/1733296533/favicon.ico"/>
   <style>
     /* 基础样式 */
     html, body {
@@ -52,7 +53,7 @@
            
             white-space: nowrap;
             min-width: 150px; /* 保证最小显示宽度 */
-            overflow: hidden;
+            /*overflow: hidden;*/
             text-overflow: ellipsis;
         }
 
@@ -65,7 +66,7 @@
         }
 
         /* 登录按钮 */
-        .login-btn {
+        /* .login-btn {
             padding: 8px 20px;
             border-radius: 20px;
             background: #4285f4;
@@ -77,7 +78,7 @@
         }
         .login-btn:hover {
             background: #357abd;
-        }
+        } */
 
         /* 折叠菜单 */
         .menu-toggle {
@@ -130,9 +131,9 @@
                 font-size: 1.2em;
                 min-width: 120px;
             }
-            .login-btn {
+            /* .login-btn {
                 padding: 6px 15px;
-                font-size: 0.9em;
+                font-size: 0.9em; */
             }
             .menu-toggle {
                 display: flex;
@@ -149,10 +150,10 @@
                 font-size: 1em;
                 min-width: 100px;
             }
-            .login-btn {
+            /* .login-btn {
                 padding: 5px 12px;
                 font-size: 0.8em;
-            }
+            } */
         }
 
 
@@ -313,7 +314,7 @@
 </head>
 <body>
    <!-- 导航栏 -->
-   <nav class="nav-bar">
+  <nav class="nav-bar">
     <!-- Logo -->
     <img src="logo.webp" alt="Logo" class="nav-logo" onclick="location.reload()">
     
@@ -322,22 +323,24 @@
     
     <!-- 右侧控制区 -->
     <div class="nav-controls">
-        <a href="login.html"><button class="login-btn">Login</button></a>
+       
         <div class="menu-toggle" onclick="toggleMenu()">
             <span></span>
             <span></span>
             <span></span>
         </div>
+        &nbsp;&nbsp;&nbsp;
+        <!-- <a href="login.html"><button class="login-btn">Login</button></a> -->
     </div>
 
     <!-- 下拉菜单 -->
     <div class="dropdown-menu" id="dropdownMenu">
-        <a href="#">My Profile</a>
-        <a href="#">Settings</a>
-        <a href="#">Help Center</a>
+        <a href="login.html">My Profile</a>
+        <a href="#">Booking</a>
+        <a href="#">Help</a>
         <a href="#">Feedback</a>
     </div>
-</nav>
+  </nav>
 
   <!-- 加载提示 -->
   <div class="loading">Map loading...</div>

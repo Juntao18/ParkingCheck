@@ -35,11 +35,11 @@
           });
         })
         .then(() => {
-          alert("注册成功，数据已保存到数据库！");
+          alert("Welcom to Maynooth University Parking Check System！");
           // 这里可以进行页面跳转，例如：
-          // window.location.href = "/home.html";
+          window.location.href = "login.html";
         })
         .catch((error) => {
-          alert("注册错误：" + error.message);
+          alert("Sorry：" + error.message);
         });
     };

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile</title>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut, updateProfile } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyC_RFkbb9opYta3RgyCfO-RP0pVfcDNB94",
+      authDomain: "parkingcheck-83318.firebaseapp.com",
+      projectId: "parkingcheck-83318",
+      storageBucket: "parkingcheck-83318.firebasestorage.app",
+      messagingSenderId: "421752321656",
+      appId: "1:421752321656:web:d60ff23bdb5f226e85df8d",
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        window.location.href = "login.html";
+      } else {
+        document.getElementById("profile-name").innerText = user.displayName || "No Name";
+        document.getElementById("profile-email").innerText = user.email;
+        document.getElementById("profile-photo").src = user.photoURL || "default-avatar.png";
+      }
+    });
+
+    document.getElementById("logout-btn").addEventListener("click", () => {
+      signOut(auth).then(() => {
+        window.location.href = "login.html";
+      });
+    });
+
+    document.getElementById("update-btn").addEventListener("click", () => {
+      const newName = document.getElementById("new-name").value;
+      updateProfile(auth.currentUser, { displayName: newName }).then(() => {
+        document.getElementById("profile-name").innerText = newName;
+        alert("Profile updated!");
+      }).catch(error => alert(error.message));
+    });
+  </script>
+</head>
+<body>
+  <h1>My Profile</h1>
+  <img id="profile-photo" width="100" height="100" alt="Profile Picture">
+  <p><b>Name:</b> <span id="profile-name"></span></p>
+  <p><b>Email:</b> <span id="profile-email"></span></p>
+  <input type="text" id="new-name" placeholder="Enter new name">
+  <button id="update-btn">Update Name</button>
+  <button id="logout-btn">Logout</button>
+</body>
+</html>
