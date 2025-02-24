@@ -25,7 +25,7 @@ body {
       /* Logo样式 */
       .nav-logo {
           flex-shrink: 0;
-          height: 40px;
+          height: 50px;
           cursor: pointer;
           transition: transform 0.3s;
       }
@@ -36,7 +36,6 @@ body {
        .nav-title {
           flex-grow: 1;
           text-align: center;
-          
           font-size: 28px;
           color: #0073b1; 
           margin-top: 10px;
@@ -242,13 +241,53 @@ body {
     background-color: #aaa;
     cursor: not-allowed;
   }
+  .update-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .update-button{
+    background-color: #cfcbcb6b;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 5px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 0px;
+    width: 100%;
+  }
+  .updateplus{
+    background-color: #cfcbcb6b;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 5px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 5px;
+    width: 50%;
+  }
+  .update-{
+    background-color: #cfcbcb6b;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 5px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 5px;
+    width: 50%;
+  }
+
 
   /* 左下角缩放控制按钮 */
   #zoom-controls {
     position: fixed;
     left: 20px;
     bottom: 30px;
-    z-index: 1002;
+    z-index: 1000;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -289,20 +328,22 @@ body {
       top: auto !important;
       bottom: 0 !important;
       width: 100% !important;
+      max-width: 100% !important; /* 覆盖默认的 max-width */
+      box-sizing: border-box;    /* 包括 padding 在内 */
       height: 50% !important;
       border-radius: 20px 20px 0 0;
       font-size: 16px;
       overflow-y: auto;
       padding: 20px;
-      margin: 0 auto;
+      margin: 0;
     }
     .zoom-button {
       width: 40px;
       height: 40px;
       font-size: 20px;
     }
-    }
-
+  }
+  
 
     /* 筛选Filter */
 #filter-controls {

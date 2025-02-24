@@ -1,5 +1,6 @@
 
   const filterMap = {
+    'all': ['MU Student', 'Multi-Permit','MU Staff','EV Charge Point','Car Share/Pooling','Restricted','Pay and Display'],
     'visit': ['Pay and Display'],
     'staff': ['MU Staff', 'Multi-Permit'],
     'student': ['MU Student', 'Multi-Permit'],
@@ -22,7 +23,7 @@
     const dropdown = document.getElementById('filterDropdown');
     
     // 生成移动端菜单
-    const mobileItems = ['visit', 'staff', 'student', 'charge'].map(type => {
+    const mobileItems = ['all','visit', 'staff', 'student', 'charge'].map(type => {
       const item = document.createElement('button');
       item.className = 'filter-item';
       item.textContent = type.charAt(0).toUpperCase() + type.slice(1);

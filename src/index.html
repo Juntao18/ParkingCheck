@@ -11,10 +11,11 @@
    <!-- 导航栏 -->
   <nav class="nav-bar">
     <!-- Logo -->
-    <img src="logo.webp" alt="Logo" class="nav-logo" onclick="location.reload()">
+    <img src="logo.webp" alt="Logo" class="nav-logo" onclick="window.location.href='https://www.maynoothuniversity.ie/'" style="cursor:pointer;">
     
     <!-- 中间标题 -->
     <div class="nav-title" onclick="window.location.href= 'index.html';return false"><b>ParkingCheck</b></div>
+    
     
     <!-- 右侧控制区 -->
     <div class="nav-controls">
@@ -51,6 +52,7 @@
   <div id="map-wrapper">
     <div id="filter-controls">
       <div class="filter-group">
+        <button class="filter-btn" data-type="all">All</button>
         <button class="filter-btn" data-type="visit">Visit</button>
         <button class="filter-btn" data-type="staff">Staff</button>
         <button class="filter-btn" data-type="student">Student</button>
@@ -69,7 +71,9 @@
 
   <!-- Script----------Script--------Script----------- Script-->
   <script src ="info-box-close.js"></script>
-  <script src ="parkingdata.js"></script>
+  <script src="parkingdata-cloud.js" type="module"></script>
+  <!-- <script src ="parkingdata.js"></script>
+  <script src ="parkingdata-firebase.js" type="module"></script> -->
   <script src ="filter.js"></script>
 
 </body>
