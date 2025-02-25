@@ -1,6 +1,8 @@
 {
   "hosting": {
-    "public": "public",
+    "target": "parkingcheck",
+    "site": "parkingcheck",
+    "public": "new",
     "ignore": [
       "firebase.json",
       "**/.*",
