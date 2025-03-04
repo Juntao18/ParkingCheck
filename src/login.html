@@ -224,7 +224,7 @@
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           // 成功后可跳转或其他处理，例如：
-          window.location.href = "index.html";
+          window.location.href = "/index.html";
         })
         .catch((error) => {
           alert("Sorry!" + error.message);

@@ -7,7 +7,22 @@
       "y": 3084,
       "capacity": 140,
       "available": 30,
-      "gmaps": "https://maps.app.goo.gl/54hkpHb5stybbe969"
+      "gmaps": "https://maps.app.goo.gl/54hkpHb5stybbe969",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 120 },
+        { "start": "08:30", "end": "09:00", "available": 60 },
+        { "start": "09:00", "end": "09:30", "available": 30 },
+        { "start": "09:30", "end": "10:00", "available": 20 },
+        { "start": "10:00", "end": "14:30", "available": 10 },
+        { "start": "14:30", "end": "15:30", "available": 30 },
+        { "start": "15:30", "end": "16:30", "available": 50 },
+        { "start": "16:30", "end": "18:00", "available": 80 },
+        { "start": "18:00", "end": "00:00", "available": 120 },
+        { "start": "00:00", "end": "08:00", "available": 120 }
+      ],
+      "scheduleHoliday": [
+        { "start": "00:00", "end": "00:00", "available": 130 }
+      ]
     },
     {
       "id": 2,
@@ -17,7 +32,18 @@
       "y": 2711,
       "capacity": 17,
       "available": 1,
-      "gmaps": "https://maps.app.goo.gl/pHvRUgdXpLwS7ht28"
+      "gmaps": "https://maps.app.goo.gl/pHvRUgdXpLwS7ht28",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 10 },
+        { "start": "08:30", "end": "09:00", "available": 1 },
+        { "start": "09:00", "end": "14:30", "available": 0 },
+        { "start": "14:30", "end": "16:30", "available": 3 },
+        { "start": "16:30", "end": "00:00", "available": 5 },
+        { "start": "00:00", "end": "08:00", "available": 5 }
+      ],
+      "scheduleHoliday": [
+         { "start": "00:00", "end": "00:00", "available": 10 }
+      ]
     },
     {
       "id": 3,
@@ -27,7 +53,18 @@
       "y": 2497,
       "capacity": 11,
       "available": 0,
-      "gmaps": "https://maps.app.goo.gl/EacEkeQV5uRygj939"
+      "gmaps": "https://maps.app.goo.gl/EacEkeQV5uRygj939",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 8 },
+        { "start": "08:30", "end": "09:00", "available": 1 },
+        { "start": "09:00", "end": "14:30", "available": 0 },
+        { "start": "14:30", "end": "16:30", "available": 3 },
+        { "start": "16:30", "end": "00:00", "available": 4 },
+        { "start": "00:00", "end": "08:00", "available": 4 }
+      ],
+      "scheduleHoliday": [
+        { "start": "00:00", "end": "00:00", "available": 8 }
+      ]
     },
     {
       "id": "3-1",
@@ -37,7 +74,22 @@
       "y": 2283,
       "capacity": 320,
       "available": 245,
-      "gmaps": "https://maps.app.goo.gl/oL82tgctgm3cA6Ru7"
+      "gmaps": "https://maps.app.goo.gl/oL82tgctgm3cA6Ru7",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 300 },
+        { "start": "08:30", "end": "09:00", "available": 280 },
+        { "start": "09:00", "end": "09:30", "available": 150 },
+        { "start": "09:30", "end": "10:00", "available": 100 },
+        { "start": "10:00", "end": "14:30", "available": 30 },
+        { "start": "14:30", "end": "15:30", "available": 100 },
+        { "start": "15:30", "end": "16:30", "available": 150 },
+        { "start": "16:30", "end": "18:00", "available": 200 },
+        { "start": "18:00", "end": "00:00", "available": 300 },
+        { "start": "00:00", "end": "08:00", "available": 300 }
+      ],
+      "scheduleHoliday": [
+        { "start": "00:00", "end": "00:00", "available": 300 }
+      ]
     },
     {
       "id": "3-2",
@@ -47,7 +99,18 @@
       "y": 2300,
       "capacity": 6,
       "available": 5,
-      "gmaps": "https://maps.app.goo.gl/oL82tgctgm3cA6Ru7"
+      "gmaps": "https://maps.app.goo.gl/oL82tgctgm3cA6Ru7",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 5 },
+        { "start": "08:30", "end": "09:00", "available": 3 },
+        { "start": "09:00", "end": "14:30", "available": 0 },
+        { "start": "14:30", "end": "16:30", "available": 2 },
+        { "start": "16:30", "end": "00:00", "available": 4 },
+        { "start": "00:00", "end": "08:00", "available": 4 }
+      ],
+      "scheduleHoliday": [
+         { "start": "00:00", "end": "00:00", "available": 6 }
+      ]
     },
     {
       "id": 4,
@@ -57,7 +120,21 @@
       "y": 2270,
       "capacity": 217,
       "available": 150,
-      "gmaps": "https://maps.app.goo.gl/VT2spo7aBQr2nWnp6"
+      "gmaps": "https://maps.app.goo.gl/VT2spo7aBQr2nWnp6",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 200 },
+        { "start": "08:30", "end": "09:00", "available": 100 },
+        { "start": "09:00", "end": "09:30", "available": 50 },
+        { "start": "09:30", "end": "14:30", "available": 20 },
+        { "start": "14:30", "end": "15:30", "available": 100 },
+        { "start": "15:30", "end": "16:30", "available": 120 },
+        { "start": "16:30", "end": "18:00", "available": 150 },
+        { "start": "18:00", "end": "00:00", "available": 200 },
+        { "start": "00:00", "end": "08:00", "available": 200 }
+      ],
+      "scheduleHoliday": [
+        { "start": "00:00", "end": "00:00", "available": 200 }
+      ]
     },
     {
       "id": "4-1",
@@ -67,7 +144,16 @@
       "y": 2266,
       "capacity": 31,
       "available": 28,
-      "gmaps": "https://maps.app.goo.gl/YjfYDQM16CzCP5CS6"
+      "gmaps": "https://maps.app.goo.gl/YjfYDQM16CzCP5CS6",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 30 },
+        { "start": "08:30", "end": "18:00", "available": 28 },
+        { "start": "18:00", "end": "00:00", "available": 31 },
+        { "start": "00:00", "end": "08:00", "available": 31 }
+      ],
+      "scheduleHoliday": [
+        { "start": "00:00", "end": "00:00", "available": 31 }
+      ]
     },
     {
       "id": 5,
@@ -77,7 +163,16 @@
       "y": 2244,
       "capacity": 15,
       "available": 15,
-      "gmaps": "https://maps.app.goo.gl/5ZqHcHU8dHCL9omQ6"
+      "gmaps": "https://maps.app.goo.gl/5ZqHcHU8dHCL9omQ6",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 15 },
+        { "start": "08:30", "end": "18:00", "available": 15 },
+        { "start": "18:00", "end": "00:00", "available": 15 },
+        { "start": "00:00", "end": "08:00", "available": 15 }
+      ],
+      "scheduleHoliday": [
+        { "start": "00:00", "end": "00:00", "available": 15 }
+      ]
     },
     {
       "id": "5-1",
@@ -87,7 +182,21 @@
       "y": 2331,
       "capacity": 70,
       "available": 50,
-      "gmaps": "https://maps.app.goo.gl/5ZqHcHU8dHCL9omQ6"
+      "gmaps": "https://maps.app.goo.gl/5ZqHcHU8dHCL9omQ6",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 65 },
+        { "start": "08:30", "end": "09:00", "available": 40 },
+        { "start": "09:00", "end": "09:30", "available": 0 },
+        { "start": "09:30", "end": "14:30", "available": 0 },
+        { "start": "14:30", "end": "15:30", "available": 0 },
+        { "start": "15:30", "end": "16:30", "available": 20 },
+        { "start": "16:30", "end": "18:00", "available": 30 },
+        { "start": "18:00", "end": "00:00", "available": 40 },
+        { "start": "00:00", "end": "08:00", "available": 40 }
+      ],
+      "scheduleHoliday": [
+        { "start": "00:00", "end": "00:00", "available": 65 }
+      ]
     },
     {
       "id": "6-1",
@@ -97,7 +206,19 @@
       "y": 1857,
       "capacity": 60,
       "available": 10,
-      "gmaps": "https://maps.app.goo.gl/JQ8wnGMAe72GrhPY8"
+      "gmaps": "https://maps.app.goo.gl/JQ8wnGMAe72GrhPY8",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 50 },
+        { "start": "08:30", "end": "14:30", "available": 0 },
+        { "start": "14:30", "end": "15:30", "available": 10 },
+        { "start": "15:30", "end": "16:30", "available": 15 },
+        { "start": "16:30", "end": "18:00", "available": 20 },
+        { "start": "18:00", "end": "00:00", "available": 50 },
+        { "start": "00:00", "end": "08:00", "available": 50 }
+      ],
+      "scheduleHoliday": [
+        { "start": "00:00", "end": "00:00", "available": 60 }
+      ]
     },
     {
       "id": "6-2",
@@ -107,7 +228,17 @@
       "y": 1912,
       "capacity": 41,
       "available": 10,
-      "gmaps": "https://maps.app.goo.gl/PWadJ7zpQgZARLWb8"
+      "gmaps": "https://maps.app.goo.gl/PWadJ7zpQgZARLWb8",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 30 },
+        { "start": "08:30", "end": "15:30", "available": 0 },
+        { "start": "15:30", "end": "18:00", "available": 10 },
+        { "start": "18:00", "end": "00:00", "available": 20 },
+        { "start": "00:00", "end": "08:00", "available": 20 }
+      ],
+      "scheduleHoliday": [
+         { "start": "00:00", "end": "00:00", "available": 35 }
+      ]
     },
     {
       "id": "6-3",
@@ -117,7 +248,18 @@
       "y": 2008,
       "capacity": 9,
       "available": 1,
-      "gmaps": "https://maps.app.goo.gl/PWadJ7zpQgZARLWb8"
+      "gmaps": "https://maps.app.goo.gl/PWadJ7zpQgZARLWb8",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 5 },
+        { "start": "08:30", "end": "14:30", "available": 0 },
+        { "start": "14:30", "end": "16:30", "available": 1 },
+        { "start": "16:30", "end": "18:00", "available": 2 },
+        { "start": "18:00", "end": "00:00", "available": 1 },
+        { "start": "00:00", "end": "08:00", "available": 1 }
+      ],
+      "scheduleHoliday": [
+        { "start": "00:00", "end": "00:00", "available": 9 }
+      ]
     },
     {
       "id": "6-4",
@@ -127,7 +269,15 @@
       "y": 2376,
       "capacity": 9,
       "available": 1,
-      "gmaps": "https://maps.app.goo.gl/ifbQ2CBLKeWV78gy5"
+      "gmaps": "https://maps.app.goo.gl/ifbQ2CBLKeWV78gy5",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "18:00", "available": 0 },
+        { "start": "18:00", "end": "00:00", "available": 0 },
+        { "start": "00:00", "end": "08:00", "available": 0 }
+      ],
+      "scheduleHoliday": [
+         { "start": "00:00", "end": "00:00", "available": 8 }
+      ]
     },
     {
       "id": 8,
@@ -137,7 +287,20 @@
       "y": 2413,
       "capacity": 28,
       "available": 5,
-      "gmaps": "https://maps.app.goo.gl/zGapW7rbYUcYMVVV8"
+      "gmaps": "https://maps.app.goo.gl/zGapW7rbYUcYMVVV8",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 25 },
+        { "start": "08:30", "end": "09:00", "available": 5 },
+        { "start": "09:00", "end": "14:30", "available": 0 },
+        { "start": "14:30", "end": "15:30", "available": 5 },
+        { "start": "15:30", "end": "16:30", "available": 10 },
+        { "start": "16:30", "end": "18:00", "available": 15 },
+        { "start": "18:00", "end": "00:00", "available": 20 },
+        { "start": "00:00", "end": "08:00", "available": 20 }
+      ],
+      "scheduleHoliday": [
+         { "start": "00:00", "end": "00:00", "available": 25 }
+      ]
     },
     {
       "id": "9-1",
@@ -147,7 +310,21 @@
       "y": 2496,
       "capacity": 20,
       "available": 18,
-      "gmaps": "https://maps.app.goo.gl/fSGKgHAt4UbDwCue8"
+      "gmaps": "https://maps.app.goo.gl/fSGKgHAt4UbDwCue8",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 20 },
+        { "start": "08:30", "end": "09:00", "available": 15 },
+        { "start": "09:00", "end": "09:30", "available": 3 },
+        { "start": "09:30", "end": "14:30", "available": 3 },
+        { "start": "14:30", "end": "15:30", "available": 5 },
+        { "start": "15:30", "end": "16:30", "available": 8 },
+        { "start": "16:30", "end": "18:00", "available": 10 },
+        { "start": "18:00", "end": "00:00", "available": 15 },
+        { "start": "00:00", "end": "08:00", "available": 15 }
+      ],
+      "scheduleHoliday": [
+         { "start": "00:00", "end": "00:00", "available": 20 }
+      ]
     },
     {
       "id": "9-2",
@@ -157,7 +334,19 @@
       "y": 2649,
       "capacity": 12,
       "available": 10,
-      "gmaps": "https://maps.app.goo.gl/fSGKgHAt4UbDwCue8"
+      "gmaps": "https://maps.app.goo.gl/fSGKgHAt4UbDwCue8",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 10 },
+        { "start": "08:30", "end": "14:30", "available": 0 },
+        { "start": "14:30", "end": "15:30", "available": 0 },
+        { "start": "15:30", "end": "16:30", "available": 2 },
+        { "start": "16:30", "end": "18:00", "available": 5 },
+        { "start": "18:00", "end": "00:00", "available": 10 },
+        { "start": "00:00", "end": "08:00", "available": 10 }
+      ],
+      "scheduleHoliday": [
+        { "start": "00:00", "end": "00:00", "available": 10 }
+      ]
     },
     {
       "id": "9-3",
@@ -167,7 +356,19 @@
       "y": 2876,
       "capacity": 150,
       "available": 90,
-      "gmaps": "https://maps.app.goo.gl/fSGKgHAt4UbDwCue8"
+      "gmaps": "https://maps.app.goo.gl/fSGKgHAt4UbDwCue8",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 120 },
+        { "start": "08:30", "end": "09:00", "available": 30 },
+        { "start": "09:00", "end": "15:30", "available": 0 },
+        { "start": "15:30", "end": "16:30", "available": 15 },
+        { "start": "16:30", "end": "18:00", "available": 20 },
+        { "start": "18:00", "end": "00:00", "available": 100 },
+        { "start": "00:00", "end": "08:00", "available": 100 }
+      ],
+      "scheduleHoliday": [
+        { "start": "00:00", "end": "00:00", "available": 140 }
+      ]
     },
     {
       "id": 10,
@@ -177,7 +378,18 @@
       "y": 2691,
       "capacity": 22,
       "available": 2,
-      "gmaps": "https://maps.app.goo.gl/eKXD5QxiSh1kSVY36"
+      "gmaps": "https://maps.app.goo.gl/eKXD5QxiSh1kSVY36",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 20 },
+        { "start": "08:30", "end": "09:00", "available": 5 },
+        { "start": "09:00", "end": "16:30", "available": 0 },
+        { "start": "16:30", "end": "18:00", "available": 5 },
+        { "start": "18:00", "end": "00:00", "available": 10 },
+        { "start": "00:00", "end": "08:00", "available": 10 }
+      ],
+      "scheduleHoliday": [
+        { "start": "00:00", "end": "00:00", "available": 22 }
+      ]
     },
     {
       "id": 11,
@@ -187,7 +399,16 @@
       "y": 2732,
       "capacity": 4,
       "available": 0,
-      "gmaps": "https://maps.app.goo.gl/Pv3orxayiP1vnaSp8"
+      "gmaps": "https://maps.app.goo.gl/Pv3orxayiP1vnaSp8",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 4 },
+        { "start": "08:30", "end": "18:00", "available": 0 },
+        { "start": "18:00", "end": "00:00", "available": 3 },
+        { "start": "00:00", "end": "08:00", "available": 3 }
+      ],
+      "scheduleHoliday": [
+        { "start": "00:00", "end": "00:00", "available": 4 }
+      ]
     },
     {
       "id": 12,
@@ -197,7 +418,18 @@
       "y": 2883,
       "capacity": 38,
       "available": 15,
-      "gmaps": "https://maps.app.goo.gl/U3CKXoXdrHHP4yWv9"
+      "gmaps": "https://maps.app.goo.gl/U3CKXoXdrHHP4yWv9",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 35 },
+        { "start": "08:30", "end": "09:00", "available": 5 },
+        { "start": "09:00", "end": "16:30", "available": 0 },
+        { "start": "16:30", "end": "18:00", "available": 5 },
+        { "start": "18:00", "end": "00:00", "available": 15 },
+        { "start": "00:00", "end": "08:00", "available": 15 }
+      ],
+      "scheduleHoliday": [
+        { "start": "00:00", "end": "00:00", "available": 37 }
+      ]
     },
     {
       "id": 13,
@@ -207,7 +439,17 @@
       "y": 2811,
       "capacity": 16,
       "available": 5,
-      "gmaps": "https://maps.app.goo.gl/ZvPgzsZzwKer5c6XA"
+      "gmaps": "https://maps.app.goo.gl/ZvPgzsZzwKer5c6XA",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 15 },
+        { "start": "08:30", "end": "16:30", "available": 0 },
+        { "start": "16:30", "end": "18:00", "available": 5 },
+        { "start": "18:00", "end": "00:00", "available": 10 },
+        { "start": "00:00", "end": "08:00", "available": 10 }
+      ],
+      "scheduleHoliday": [
+       { "start": "00:00", "end": "00:00", "available": 15 }
+      ]
     },
     {
       "id": 14,
@@ -217,7 +459,19 @@
       "y": 3019,
       "capacity": 100,
       "available": 40,
-      "gmaps": "https://maps.app.goo.gl/9rj2gefWj6Y2WyzDA"
+      "gmaps": "https://maps.app.goo.gl/9rj2gefWj6Y2WyzDA",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 80 },
+        { "start": "08:30", "end": "09:00", "available": 5 },
+        { "start": "09:00", "end": "15:30", "available": 0 },
+        { "start": "15:30", "end": "16:30", "available": 10 },
+        { "start": "16:30", "end": "18:00", "available": 25 },
+        { "start": "18:00", "end": "00:00", "available": 40 },
+        { "start": "00:00", "end": "08:00", "available": 40 }
+      ],
+      "scheduleHoliday": [
+       { "start": "00:00", "end": "00:00", "available": 100 }
+      ]
     },
     {
       "id": "14-1",
@@ -227,7 +481,16 @@
       "y": 3000,
       "capacity": 10,
       "available": 0,
-      "gmaps": "https://maps.app.goo.gl/9rj2gefWj6Y2WyzDA"
+      "gmaps": "https://maps.app.goo.gl/9rj2gefWj6Y2WyzDA",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 8 },
+        { "start": "08:30", "end": "18:00", "available": 0 },
+        { "start": "18:00", "end": "080:00", "available": 3 },
+        { "start": "00:00", "end": "08:00", "available": 3 }
+      ],
+      "scheduleHoliday": [
+       { "start": "00:00", "end": "00:00", "available": 10 }
+      ]
     },
     {
       "id": 16,
@@ -237,7 +500,13 @@
       "y": 1720,
       "capacity": 50,
       "available": 40,
-      "gmaps": "https://maps.app.goo.gl/WfGb4sCk7v3XKL34A"
+      "gmaps": "https://maps.app.goo.gl/WfGb4sCk7v3XKL34A",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:00", "available": 40 }
+      ],
+      "scheduleHoliday": [
+       { "start": "00:00", "end": "00:00", "available": 40 }
+      ]
     },
     {
       "id": "16-1",
@@ -247,7 +516,13 @@
       "y": 631,
       "capacity": 200,
       "available": 180,
-      "gmaps": "https://maps.app.goo.gl/MNXqudKWppU6WjdQ8"
+      "gmaps": "https://maps.app.goo.gl/MNXqudKWppU6WjdQ8",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:00", "available": 180 }
+      ],
+      "scheduleHoliday": [
+       { "start": "00:00", "end": "00:00", "available": 180 }
+      ]
     },
     {
       "id": 17,
@@ -257,7 +532,18 @@
       "y": 3745,
       "capacity": 24,
       "available": 15,
-      "gmaps": "https://maps.app.goo.gl/96UmjEeke7qfdYjr9"
+      "gmaps": "https://maps.app.goo.gl/96UmjEeke7qfdYjr9",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 20 },
+        { "start": "08:30", "end": "09:00", "available": 3 },
+        { "start": "09:00", "end": "16:30", "available": 0 },
+        { "start": "16:30", "end": "18:00", "available": 3 },
+        { "start": "18:00", "end": "00:00", "available": 8 },
+        { "start": "00:00", "end": "08:00", "available": 8 }
+      ],
+      "scheduleHoliday": [
+        { "start": "00:00", "end": "00:00", "available": 24 }
+      ]
     },
     {
       "id": 18,
@@ -267,7 +553,18 @@
       "y": 3882,
       "capacity": 27,
       "available": 19,
-      "gmaps": "https://maps.app.goo.gl/exsVDyopKMC5pwJ29"
+      "gmaps": "https://maps.app.goo.gl/exsVDyopKMC5pwJ29",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 25 },
+        { "start": "08:30", "end": "15:30", "available": 5 },
+        { "start": "15:30", "end": "16:30", "available": 10 },
+        { "start": "16:30", "end": "18:00", "available": 15 },
+        { "start": "18:00", "end": "00:00", "available": 25 },
+        { "start": "00:00", "end": "08:00", "available": 25 }
+      ],
+      "scheduleHoliday": [
+        { "start": "00:00", "end": "00:00", "available": 27 }
+      ]
     },
     {
       "id": 19,
@@ -277,7 +574,18 @@
       "y": 3843,
       "capacity": 33,
       "available": 10,
-      "gmaps": "https://maps.app.goo.gl/n47nBA7deUoaD88E7"
+      "gmaps": "https://maps.app.goo.gl/n47nBA7deUoaD88E7",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 20 },
+        { "start": "08:30", "end": "15:30", "available": 0 },
+        { "start": "15:30", "end": "16:30", "available": 10 },
+        { "start": "16:30", "end": "18:00", "available": 15 },
+        { "start": "18:00", "end": "00:00", "available": 20 },
+        { "start": "00:00", "end": "08:00", "available": 20 }
+      ],
+      "scheduleHoliday": [
+        { "start": "00:00", "end": "00:00", "available": 30 }
+      ]
     },
     {
       "id": 20,
@@ -287,7 +595,19 @@
       "y": 4107,
       "capacity": 46,
       "available": 30,
-      "gmaps": "https://maps.app.goo.gl/7aoiWbdGtAG5dT6y8"
+      "gmaps": "https://maps.app.goo.gl/7aoiWbdGtAG5dT6y8",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 40 },
+        { "start": "08:30", "end": "09:00", "available": 20 },
+        { "start": "09:00", "end": "09:30", "available": 10 },
+        { "start": "09:30", "end": "16:30", "available": 5 },
+        { "start": "16:30", "end": "18:00", "available": 10 },
+        { "start": "18:00", "end": "00:00", "available": 20 },
+        { "start": "00:00", "end": "08:00", "available": 20 }
+      ],
+      "scheduleHoliday": [
+        { "start": "00:00", "end": "00:00", "available": 40 }
+      ]
     },
     {
       "id": 21,
@@ -297,7 +617,18 @@
       "y": 4312,
       "capacity": 20,
       "available": 15,
-      "gmaps": "https://maps.app.goo.gl/TyyDhywB821bzos5A"
+      "gmaps": "https://maps.app.goo.gl/TyyDhywB821bzos5A",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 15 },
+        { "start": "08:30", "end": "15:30", "available": 1 },
+        { "start": "15:30", "end": "16:30", "available": 4 },
+        { "start": "16:30", "end": "18:00", "available": 6 },
+        { "start": "18:00", "end": "00:00", "available": 9 },
+        { "start": "00:00", "end": "08:00", "available": 9 }
+      ],
+      "scheduleHoliday": [
+       { "start": "00:00", "end": "00:00", "available": 18 }
+      ]
     },
     {
       "id": 22,
@@ -307,7 +638,18 @@
       "y": 4217,
       "capacity": 42,
       "available": 28,
-      "gmaps": "https://maps.app.goo.gl/ARdNjTYrdaDuxmt3A"
+      "gmaps": "https://maps.app.goo.gl/ARdNjTYrdaDuxmt3A",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 40 },
+        { "start": "08:30", "end": "09:00", "available": 20 },
+        { "start": "09:00", "end": "16:30", "available": 10 },
+        { "start": "16:30", "end": "18:00", "available": 20 },
+        { "start": "18:00", "end": "00:00", "available": 30 },
+        { "start": "00:00", "end": "08:00", "available": 30 }
+      ],
+      "scheduleHoliday": [
+       { "start": "00:00", "end": "00:00", "available": 40 }
+      ]
     },
     {
       "id": 23,
@@ -317,7 +659,17 @@
       "y": 4055,
       "capacity": 12,
       "available": 10,
-      "gmaps": "https://maps.app.goo.gl/zTRALfvhcQsDNXYk9"
+      "gmaps": "https://maps.app.goo.gl/zTRALfvhcQsDNXYk9",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 10 },
+        { "start": "08:30", "end": "16:30", "available": 0 },
+        { "start": "16:30", "end": "18:00", "available": 3 },
+        { "start": "18:00", "end": "00:00", "available": 7 },
+        { "start": "00:00", "end": "08:00", "available": 7 }
+      ],
+      "scheduleHoliday": [
+        { "start": "00:00", "end": "00:00", "available": 10 }
+      ]
     },
     {
       "id": 24,
@@ -327,7 +679,17 @@
       "y": 4138,
       "capacity": 20,
       "available": 5,
-      "gmaps": "https://maps.app.goo.gl/3dD5o59ac5udTz3V8"
+      "gmaps": "https://maps.app.goo.gl/3dD5o59ac5udTz3V8",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 15 },
+        { "start": "08:30", "end": "16:30", "available": 0 },
+        { "start": "16:30", "end": "18:00", "available": 5 },
+        { "start": "18:00", "end": "00:00", "available": 10 },
+        { "start": "00:00", "end": "08:00", "available": 10 }
+      ],
+      "scheduleHoliday": [
+        { "start": "00:00", "end": "00:00", "available": 20 }
+      ]
     },
     {
       "id": 25,
@@ -337,7 +699,16 @@
       "y": 4000,
       "capacity": 100,
       "available": 80,
-      "gmaps": "https://maps.app.goo.gl/MwbNkYYCUvEYhf8y9"
+      "gmaps": "https://maps.app.goo.gl/MwbNkYYCUvEYhf8y9",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 80 },
+        { "start": "08:30", "end": "18:00", "available": 50 },
+        { "start": "18:00", "end": "00:00", "available": 80 },
+        { "start": "00:00", "end": "08:00", "available": 80 }
+      ],
+      "scheduleHoliday": [
+        { "start": "08:00", "end": "08:00", "available": 80 }
+      ]
     },
     {
       "id": 26,
@@ -347,7 +718,18 @@
       "y": 3647,
       "capacity": 43,
       "available": 10,
-      "gmaps": "https://maps.app.goo.gl/8zyN5sqy2Lm761mR6"
+      "gmaps": "https://maps.app.goo.gl/8zyN5sqy2Lm761mR6",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 40 },
+        { "start": "08:30", "end": "09:00", "available": 20 },
+        { "start": "09:00", "end": "16:30", "available": 10 },
+        { "start": "16:30", "end": "18:00", "available": 20 },
+        { "start": "18:00", "end": "00:00", "available": 40 },
+        { "start": "00:00", "end": "08:00", "available": 40 }
+      ],
+      "scheduleHoliday": [
+        { "start": "08:00", "end": "08:00", "available": 40 }
+      ]
     },
     {
       "id": 27,
@@ -357,7 +739,17 @@
       "y": 3533,
       "capacity": 18,
       "available": 5,
-      "gmaps": "https://maps.app.goo.gl/8zyN5sqy2Lm761mR6"
+      "gmaps": "https://maps.app.goo.gl/8zyN5sqy2Lm761mR6",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 15 },
+        { "start": "08:30", "end": "16:30", "available": 0 },
+        { "start": "16:30", "end": "18:00", "available": 4 },
+        { "start": "18:00", "end": "00:00", "available": 9 },
+        { "start": "00:00", "end": "08:00", "available": 9 }
+      ],
+      "scheduleHoliday": [
+        { "start": "08:00", "end": "08:00", "available": 18 }
+      ]
     },
     {
       "id": 28,
@@ -367,7 +759,17 @@
       "y": 3658,
       "capacity": 10,
       "available": 8,
-      "gmaps": "https://maps.app.goo.gl/6R3LpDoFQm5vxfcm9"
+      "gmaps": "https://maps.app.goo.gl/6R3LpDoFQm5vxfcm9",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 8 },
+        { "start": "08:30", "end": "16:30", "available": 5 },
+        { "start": "16:30", "end": "18:00", "available": 6 },
+        { "start": "18:00", "end": "00:00", "available": 8 },
+        { "start": "00:00", "end": "08:00", "available": 8 }
+      ],
+      "scheduleHoliday": [
+        { "start": "08:00", "end": "08:00", "available": 10 }
+      ]
     },
     {
       "id": 29,
@@ -377,7 +779,19 @@
       "y": 3532,
       "capacity": 4,
       "available": 3,
-      "gmaps": "https://maps.app.goo.gl/8sx3YxTDP3XT1yj36"
+      "gmaps": "https://maps.app.goo.gl/8sx3YxTDP3XT1yj36",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 4 },
+        { "start": "08:30", "end": "09:00", "available": 3 },
+        { "start": "09:00", "end": "09:30", "available": 2 },
+        { "start": "09:30", "end": "16:30", "available": 1 },
+        { "start": "16:30", "end": "18:00", "available": 2 },
+        { "start": "18:00", "end": "00:00", "available": 3 },
+        { "start": "00:00", "end": "08:00", "available": 3 }
+      ],
+      "scheduleHoliday": [
+        { "start": "08:00", "end": "08:00", "available": 4 }
+      ]
     },
     {
       "id": 30,
@@ -387,7 +801,18 @@
       "y": 3600,
       "capacity": 65,
       "available": 50,
-      "gmaps": "https://maps.app.goo.gl/tF8bDDKLRn8kC4Zp9"
+      "gmaps": "https://maps.app.goo.gl/tF8bDDKLRn8kC4Zp9",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 65 },
+        { "start": "08:30", "end": "09:00", "available": 60 },
+        { "start": "09:00", "end": "16:30", "available": 40 },
+        { "start": "16:30", "end": "18:00", "available": 50 },
+        { "start": "18:00", "end": "00:00", "available": 60 },
+        { "start": "00:00", "end": "08:00", "available": 60 }
+      ],
+      "scheduleHoliday": [
+        { "start": "08:00", "end": "08:00", "available": 60 }
+      ]
     },
     {
       "id": 31,
@@ -397,7 +822,18 @@
       "y": 3499,
       "capacity": 77,
       "available": 50,
-      "gmaps": "https://maps.app.goo.gl/YcJSRH7me2FdkKbm9"
+      "gmaps": "https://maps.app.goo.gl/YcJSRH7me2FdkKbm9",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 75 },
+        { "start": "08:30", "end": "09:00", "available": 70 },
+        { "start": "09:00", "end": "16:30", "available": 60 },
+        { "start": "16:30", "end": "18:00", "available": 70 },
+        { "start": "18:00", "end": "00:00", "available": 75 },
+        { "start": "00:00", "end": "08:00", "available": 75 }
+      ],
+      "scheduleHoliday": [
+        { "start": "08:00", "end": "08:00", "available": 70 }
+      ]
     },
     {
       "id": 32,
@@ -407,7 +843,19 @@
       "y": 3329,
       "capacity": 50,
       "available": 20,
-      "gmaps": "https://maps.app.goo.gl/v3wzM9FumdqHPpmv8"
+      "gmaps": "https://maps.app.goo.gl/v3wzM9FumdqHPpmv8",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 50 },
+        { "start": "08:30", "end": "09:00", "available": 30 },
+        { "start": "09:00", "end": "15:30", "available": 0 },
+        { "start": "15:30", "end": "16:00", "available": 10 },
+        { "start": "16:30", "end": "18:00", "available": 20 },
+        { "start": "18:00", "end": "00:00", "available": 40 },
+        { "start": "00:00", "end": "08:00", "available": 40 }
+      ],
+      "scheduleHoliday": [
+        { "start": "08:00", "end": "00:00", "available": 50 }
+      ]
     },
     {
       "id": 33,
@@ -417,7 +865,18 @@
       "y": 3371,
       "capacity": 155,
       "available": 55,
-      "gmaps": "https://maps.app.goo.gl/s2b92TtjdDhYusqR6"
+      "gmaps": "https://maps.app.goo.gl/s2b92TtjdDhYusqR6",
+      "scheduleSemester": [
+        { "start": "08:00", "end": "08:30", "available": 150 },
+        { "start": "08:30", "end": "09:00", "available": 50 },
+        { "start": "09:00", "end": "16:30", "available": 40 },
+        { "start": "16:30", "end": "18:00", "available": 70 },
+        { "start": "18:00", "end": "00:00", "available": 100 },
+        { "start": "00:00", "end": "08:00", "available": 100 }
+      ],
+      "scheduleHoliday": [
+        { "start": "08:00", "end": "08:00", "available": 150 }
+      ]
     }
   ]
   

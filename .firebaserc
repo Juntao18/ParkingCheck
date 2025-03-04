@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "parkingcheck-83318"
-  }
+  },
+  "targets": {
+    "parkingcheck-83318": {
+      "hosting": {
+        "parkingcheck": [
+          "parkingcheck"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

@@ -175,7 +175,7 @@ window.submitUserUpdate = async function(parkingId) {
   if (!isNaN(newAvailable)) {
     try {
       const parkingRef = doc(db, 'parkingLots', parkingId);
-      await updateDoc(parkingRef, { available: newAvailable, lastUpdated: new Date() });
+      await updateDoc(parkingRef, { available: newAvailable, lastUserUpdate: new Date() });
       alert("successfully updated");
     } catch (error) {
       alert("Update failed:" + error.message);
@@ -191,7 +191,7 @@ window.updatePlus = async function(parkingId) {
       const currentData = parkingData[parkingId];
       const newAvailable = currentData.available + 1;
       const parkingRef = doc(db, 'parkingLots', parkingId);
-      await updateDoc(parkingRef, { available: newAvailable, lastUpdated: new Date() });
+      await updateDoc(parkingRef, { available: newAvailable, lastUserUpdate: new Date() });
       alert("+1 Parking space");
     } catch (error) {
       alert("Update failed：" + error.message);
@@ -204,7 +204,7 @@ window.updatePlus = async function(parkingId) {
       const currentData = parkingData[parkingId];
       const newAvailable = currentData.available - 1;
       const parkingRef = doc(db, 'parkingLots', parkingId);
-      await updateDoc(parkingRef, { available: newAvailable, lastUpdated: new Date() });
+      await updateDoc(parkingRef, { available: newAvailable, lastUserUpdate: new Date() });
       alert("-1 Parking space");
     } catch (error) {
       alert("Update failed：" + error.message);
