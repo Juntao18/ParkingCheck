@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>MU|ParkingCheck</title>
   <link rel="shortcut icon" href="//moodle.maynoothuniversity.ie/pluginfile.php/1/theme_catawesome/favicon/1733296533/favicon.ico"/>
-  <link rel="stylesheet" href="src/style.css"
+  <link rel="stylesheet" href="src/style.css">
 </head>
 <body>
-   <!-- 导航栏 -->
+   <!-- Navigation Bar  导航栏 -->
   <nav class="nav-bar">
     <!-- Logo -->
     <img src="logo.webp" alt="Logo" class="nav-logo" onclick="window.location.href='https://www.maynoothuniversity.ie/'" style="cursor:pointer;">
     
-    <!-- 中间标题 -->
+    <!-- Middle Title  ParkingCheck -->
     <div class="nav-title" onclick="window.location.href= 'index.html';return false"><b>ParkingCheck</b></div>
     
     
-    <!-- 右侧控制区 -->
+    <!-- SettingMenu -->
     <div class="nav-controls">
        
         <div class="menu-toggle" onclick="toggleMenu()">
@@ -29,26 +29,51 @@
         <!-- <a href="login.html"><button class="login-btn">Login</button></a> -->
     </div>
 
-    <!-- 下拉菜单 -->
+    <!-- Drop down Menu下拉菜单 -->
     <div class="dropdown-menu" id="dropdownMenu">
-        <a href="src/myProfile.html"><img src="src/img/pf.png" style="height: 20px;">     Profile</a>
-        <a href="src/booking.html"><img src="src/img/bk.png" style="height: 20px;">     Booking</a>
-        <a href="https://www.maynoothuniversity.ie/campus-life/campus-map"><img src="src/img/cp.png" style="height: 20px;">Campus Map</a>
-        <a href="https://www.maynoothuniversity.ie/location/parking-traffic-management/disabled-parking"><img src="src/img/dp.png" style="height: 20px;">    Disabled Parking</a>
-        <a href="https://www.maynoothuniversity.ie/location/parking-traffic-management/permit-information"><img src="src/img/pm.png" style="height: 20px;">     Permit Information</a>
-        <a href="https://www.maynoothuniversity.ie/location/parking-traffic-management/visitor-parking"><img src="src/img/vis.png" style="height: 20px;">     Visitor Parking</a>
-        <a href="https://www.maynoothuniversity.ie/location/parking-traffic-management/electric-vehicles"><img src="src/img/ec.png" style="height: 20px;">     Electric Vehicles</a>
-        <a href="https://www.maynoothuniversity.ie/location/parking-traffic-management/car-sharing"><img src="src/img/sr.png" style="height: 20px;">     Car Sharing</a>
-        <a href="https://www.maynoothuniversity.ie/location/parking-traffic-management/apply-permit"><img src="src/img/ap.png" style="height: 20px;">     Apply Permit</a>
-        <a href="https://www.maynoothuniversity.ie/location/parking-traffic-management/university-traffic-management-policy"><img src="src/img/pc.png" style="height: 20px;">     Policy</a>
-        <a href="https://forms.gle/kkYrmzQPF5f6ni3n9"><img src="src/img/fb.png" style="height: 20px;">   Feedback</a>
+      <a href="src/myProfile.html">
+        <img src="src/img/pf.png" style="height: 20px;"> Profile
+      </a>
+      <a href="src/booking.html">
+        <img src="src/img/bk.png" style="height: 20px;"> Booking
+      </a>
+      <a href="https://www.maynoothuniversity.ie/location/parking-traffic-management/apply-permit">
+        <img src="src/img/ap.png" style="height: 20px;"> Apply Permit</a>
+      <a href="https://forms.gle/kkYrmzQPF5f6ni3n9"><img src="src/img/fb.png" style="height: 20px;"> Feedback</a>
+      <div class="submenu">
+        <button class="submenu-toggle"><img src="src/img/me.png" style="height: 20px;"> Parking &amp; Policy</button>
+        <div class="submenu-content">
+          <a href="https://www.maynoothuniversity.ie/campus-life/campus-map">
+            <img src="src/img/cp.png" style="height: 20px;"> Campus Map
+          </a>
+          <a href="https://www.maynoothuniversity.ie/location/parking-traffic-management/disabled-parking">
+            <img src="src/img/dp.png" style="height: 20px;"> Disabled Parking
+          </a>
+          <a href="https://www.maynoothuniversity.ie/location/parking-traffic-management/visitor-parking">
+            <img src="src/img/vis.png" style="height: 20px;"> Visitor Parking
+          </a>
+          <a href="https://www.maynoothuniversity.ie/location/parking-traffic-management/electric-vehicles">
+            <img src="src/img/ec.png" style="height: 20px;"> Electric Vehicles
+          </a>
+          <a href="https://www.maynoothuniversity.ie/location/parking-traffic-management/car-sharing">
+            <img src="src/img/sr.png" style="height: 20px;"> Car Sharing
+          </a>
+          <a href="https://www.maynoothuniversity.ie/location/parking-traffic-management/university-traffic-management-policy">
+            <img src="src/img/pc.png" style="height: 20px;"> Policy
+          </a>
+        </div>
+      </div>
     </div>
   </nav>
+  <!-- Compass pic 指南针图标 -->
+  <div id="compass-container">
+    <img src="src/img/N.png" alt="" class="compass-img">
+  </div>
 
-  <!-- 加载提示 -->
+  <!-- Loading  -->
   <div class="loading">Map loading...</div>
 
-  <!-- 地图容器 -->
+  <!-- Map Box Container地图容器 -->
   <div id="map-wrapper">
     <div id="filter-controls">
       <div class="filter-group">
@@ -61,9 +86,21 @@
       
     </div>
     <div id="map-container"></div>
+    <div id="building-labels">
+      <div class="building-label" style="left: 1723px; top: 3369px;">John Paul II Library</div>
+      <div class="building-label" style="left: 2088px; top: 3207px;">AlDI</div>
+      <div class="building-label" style="left: 1180px; top: 2910px;">Callan Building</div>
+      <div class="building-label" style="left: 1488px; top: 2948px;">TSI Building</div>
+      <div class="building-label" style="left: 1297px; top: 2689px;">Eolas Building</div>
+      <div class="building-label" style="left: 1581px; top: 2689px;">John Hume Building</div>
+      <div class="building-label" style="left: 1707px; top: 2411px;">Rye Hall</div>
+      <div class="building-label" style="left: 1365px; top: 2116px;">Courtyard Apartment</div>
+      <div class="building-label" style="left: 2119px; top: 3791px;">St Joseph‘s Square</div>
+      <div class="building-label" style="left: 1878px; top: 4191px;">Loftus Halls</div>
+    </div>
   </div>
 
-  <!-- 左下角缩放按钮 -->
+  
   <div id="zoom-controls">
     <button id="zoom-in" class="zoom-button">+</button>
     <button id="zoom-out" class="zoom-button">–</button>

@@ -17,11 +17,11 @@
         { "start": "14:30", "end": "15:30", "available": 30 },
         { "start": "15:30", "end": "16:30", "available": 50 },
         { "start": "16:30", "end": "18:00", "available": 80 },
-        { "start": "18:00", "end": "00:00", "available": 120 },
+        { "start": "18:00", "end": "24:00", "available": 120 },
         { "start": "00:00", "end": "08:00", "available": 120 }
       ],
       "scheduleHoliday": [
-        { "start": "00:00", "end": "00:00", "available": 130 }
+        { "start": "00:00", "end": "24:00", "available": 130 }
       ]
     },
     {
@@ -38,11 +38,11 @@
         { "start": "08:30", "end": "09:00", "available": 1 },
         { "start": "09:00", "end": "14:30", "available": 0 },
         { "start": "14:30", "end": "16:30", "available": 3 },
-        { "start": "16:30", "end": "00:00", "available": 5 },
+        { "start": "16:30", "end": "24:00", "available": 5 },
         { "start": "00:00", "end": "08:00", "available": 5 }
       ],
       "scheduleHoliday": [
-         { "start": "00:00", "end": "00:00", "available": 10 }
+         { "start": "00:00", "end": "24:00", "available": 10 }
       ]
     },
     {
@@ -59,11 +59,11 @@
         { "start": "08:30", "end": "09:00", "available": 1 },
         { "start": "09:00", "end": "14:30", "available": 0 },
         { "start": "14:30", "end": "16:30", "available": 3 },
-        { "start": "16:30", "end": "00:00", "available": 4 },
+        { "start": "16:30", "end": "24:00", "available": 4 },
         { "start": "00:00", "end": "08:00", "available": 4 }
       ],
       "scheduleHoliday": [
-        { "start": "00:00", "end": "00:00", "available": 8 }
+        { "start": "00:00", "end": "24:00", "available": 8 }
       ]
     },
     {
@@ -84,11 +84,11 @@
         { "start": "14:30", "end": "15:30", "available": 100 },
         { "start": "15:30", "end": "16:30", "available": 150 },
         { "start": "16:30", "end": "18:00", "available": 200 },
-        { "start": "18:00", "end": "00:00", "available": 300 },
+        { "start": "18:00", "end": "24:00", "available": 300 },
         { "start": "00:00", "end": "08:00", "available": 300 }
       ],
       "scheduleHoliday": [
-        { "start": "00:00", "end": "00:00", "available": 300 }
+        { "start": "00:00", "end": "24:00", "available": 300 }
       ]
     },
     {
@@ -105,11 +105,11 @@
         { "start": "08:30", "end": "09:00", "available": 3 },
         { "start": "09:00", "end": "14:30", "available": 0 },
         { "start": "14:30", "end": "16:30", "available": 2 },
-        { "start": "16:30", "end": "00:00", "available": 4 },
+        { "start": "16:30", "end": "24:00", "available": 4 },
         { "start": "00:00", "end": "08:00", "available": 4 }
       ],
       "scheduleHoliday": [
-         { "start": "00:00", "end": "00:00", "available": 6 }
+         { "start": "00:00", "end": "24:00", "available": 6 }
       ]
     },
     {
@@ -129,11 +129,11 @@
         { "start": "14:30", "end": "15:30", "available": 100 },
         { "start": "15:30", "end": "16:30", "available": 120 },
         { "start": "16:30", "end": "18:00", "available": 150 },
-        { "start": "18:00", "end": "00:00", "available": 200 },
+        { "start": "18:00", "end": "24:00", "available": 200 },
         { "start": "00:00", "end": "08:00", "available": 200 }
       ],
       "scheduleHoliday": [
-        { "start": "00:00", "end": "00:00", "available": 200 }
+        { "start": "00:00", "end": "24:00", "available": 200 }
       ]
     },
     {
@@ -148,11 +148,11 @@
       "scheduleSemester": [
         { "start": "08:00", "end": "08:30", "available": 30 },
         { "start": "08:30", "end": "18:00", "available": 28 },
-        { "start": "18:00", "end": "00:00", "available": 31 },
+        { "start": "18:00", "end": "24:00", "available": 31 },
         { "start": "00:00", "end": "08:00", "available": 31 }
       ],
       "scheduleHoliday": [
-        { "start": "00:00", "end": "00:00", "available": 31 }
+        { "start": "00:00", "end": "24:00", "available": 31 }
       ]
     },
     {
@@ -167,11 +167,11 @@
       "scheduleSemester": [
         { "start": "08:00", "end": "08:30", "available": 15 },
         { "start": "08:30", "end": "18:00", "available": 15 },
-        { "start": "18:00", "end": "00:00", "available": 15 },
+        { "start": "18:00", "end": "24:00", "available": 15 },
         { "start": "00:00", "end": "08:00", "available": 15 }
       ],
       "scheduleHoliday": [
-        { "start": "00:00", "end": "00:00", "available": 15 }
+        { "start": "00:00", "end": "24:00", "available": 15 }
       ]
     },
     {
@@ -191,11 +191,11 @@
         { "start": "14:30", "end": "15:30", "available": 0 },
         { "start": "15:30", "end": "16:30", "available": 20 },
         { "start": "16:30", "end": "18:00", "available": 30 },
-        { "start": "18:00", "end": "00:00", "available": 40 },
+        { "start": "18:00", "end": "24:00", "available": 40 },
         { "start": "00:00", "end": "08:00", "available": 40 }
       ],
       "scheduleHoliday": [
-        { "start": "00:00", "end": "00:00", "available": 65 }
+        { "start": "00:00", "end": "24:00", "available": 65 }
       ]
     },
     {
@@ -213,11 +213,11 @@
         { "start": "14:30", "end": "15:30", "available": 10 },
         { "start": "15:30", "end": "16:30", "available": 15 },
         { "start": "16:30", "end": "18:00", "available": 20 },
-        { "start": "18:00", "end": "00:00", "available": 50 },
+        { "start": "18:00", "end": "24:00", "available": 50 },
         { "start": "00:00", "end": "08:00", "available": 50 }
       ],
       "scheduleHoliday": [
-        { "start": "00:00", "end": "00:00", "available": 60 }
+        { "start": "00:00", "end": "24:00", "available": 60 }
       ]
     },
     {
@@ -233,11 +233,11 @@
         { "start": "08:00", "end": "08:30", "available": 30 },
         { "start": "08:30", "end": "15:30", "available": 0 },
         { "start": "15:30", "end": "18:00", "available": 10 },
-        { "start": "18:00", "end": "00:00", "available": 20 },
+        { "start": "18:00", "end": "24:00", "available": 20 },
         { "start": "00:00", "end": "08:00", "available": 20 }
       ],
       "scheduleHoliday": [
-         { "start": "00:00", "end": "00:00", "available": 35 }
+         { "start": "00:00", "end": "24:00", "available": 35 }
       ]
     },
     {
@@ -254,11 +254,11 @@
         { "start": "08:30", "end": "14:30", "available": 0 },
         { "start": "14:30", "end": "16:30", "available": 1 },
         { "start": "16:30", "end": "18:00", "available": 2 },
-        { "start": "18:00", "end": "00:00", "available": 1 },
+        { "start": "18:00", "end": "24:00", "available": 1 },
         { "start": "00:00", "end": "08:00", "available": 1 }
       ],
       "scheduleHoliday": [
-        { "start": "00:00", "end": "00:00", "available": 9 }
+        { "start": "00:00", "end": "24:00", "available": 9 }
       ]
     },
     {
@@ -272,11 +272,11 @@
       "gmaps": "https://maps.app.goo.gl/ifbQ2CBLKeWV78gy5",
       "scheduleSemester": [
         { "start": "08:00", "end": "18:00", "available": 0 },
-        { "start": "18:00", "end": "00:00", "available": 0 },
+        { "start": "18:00", "end": "24:00", "available": 0 },
         { "start": "00:00", "end": "08:00", "available": 0 }
       ],
       "scheduleHoliday": [
-         { "start": "00:00", "end": "00:00", "available": 8 }
+         { "start": "00:00", "end": "24:00", "available": 8 }
       ]
     },
     {
@@ -295,11 +295,11 @@
         { "start": "14:30", "end": "15:30", "available": 5 },
         { "start": "15:30", "end": "16:30", "available": 10 },
         { "start": "16:30", "end": "18:00", "available": 15 },
-        { "start": "18:00", "end": "00:00", "available": 20 },
+        { "start": "18:00", "end": "24:00", "available": 20 },
         { "start": "00:00", "end": "08:00", "available": 20 }
       ],
       "scheduleHoliday": [
-         { "start": "00:00", "end": "00:00", "available": 25 }
+         { "start": "00:00", "end": "24:00", "available": 25 }
       ]
     },
     {
@@ -319,11 +319,11 @@
         { "start": "14:30", "end": "15:30", "available": 5 },
         { "start": "15:30", "end": "16:30", "available": 8 },
         { "start": "16:30", "end": "18:00", "available": 10 },
-        { "start": "18:00", "end": "00:00", "available": 15 },
+        { "start": "18:00", "end": "24:00", "available": 15 },
         { "start": "00:00", "end": "08:00", "available": 15 }
       ],
       "scheduleHoliday": [
-         { "start": "00:00", "end": "00:00", "available": 20 }
+         { "start": "00:00", "end": "24:00", "available": 20 }
       ]
     },
     {
@@ -341,11 +341,11 @@
         { "start": "14:30", "end": "15:30", "available": 0 },
         { "start": "15:30", "end": "16:30", "available": 2 },
         { "start": "16:30", "end": "18:00", "available": 5 },
-        { "start": "18:00", "end": "00:00", "available": 10 },
+        { "start": "18:00", "end": "24:00", "available": 10 },
         { "start": "00:00", "end": "08:00", "available": 10 }
       ],
       "scheduleHoliday": [
-        { "start": "00:00", "end": "00:00", "available": 10 }
+        { "start": "00:00", "end": "24:00", "available": 10 }
       ]
     },
     {
@@ -363,11 +363,11 @@
         { "start": "09:00", "end": "15:30", "available": 0 },
         { "start": "15:30", "end": "16:30", "available": 15 },
         { "start": "16:30", "end": "18:00", "available": 20 },
-        { "start": "18:00", "end": "00:00", "available": 100 },
+        { "start": "18:00", "end": "24:00", "available": 100 },
         { "start": "00:00", "end": "08:00", "available": 100 }
       ],
       "scheduleHoliday": [
-        { "start": "00:00", "end": "00:00", "available": 140 }
+        { "start": "00:00", "end": "24:00", "available": 140 }
       ]
     },
     {
@@ -384,11 +384,11 @@
         { "start": "08:30", "end": "09:00", "available": 5 },
         { "start": "09:00", "end": "16:30", "available": 0 },
         { "start": "16:30", "end": "18:00", "available": 5 },
-        { "start": "18:00", "end": "00:00", "available": 10 },
+        { "start": "18:00", "end": "24:00", "available": 10 },
         { "start": "00:00", "end": "08:00", "available": 10 }
       ],
       "scheduleHoliday": [
-        { "start": "00:00", "end": "00:00", "available": 22 }
+        { "start": "00:00", "end": "24:00", "available": 22 }
       ]
     },
     {
@@ -403,11 +403,11 @@
       "scheduleSemester": [
         { "start": "08:00", "end": "08:30", "available": 4 },
         { "start": "08:30", "end": "18:00", "available": 0 },
-        { "start": "18:00", "end": "00:00", "available": 3 },
+        { "start": "18:00", "end": "24:00", "available": 3 },
         { "start": "00:00", "end": "08:00", "available": 3 }
       ],
       "scheduleHoliday": [
-        { "start": "00:00", "end": "00:00", "available": 4 }
+        { "start": "00:00", "end": "24:00", "available": 4 }
       ]
     },
     {
@@ -424,11 +424,11 @@
         { "start": "08:30", "end": "09:00", "available": 5 },
         { "start": "09:00", "end": "16:30", "available": 0 },
         { "start": "16:30", "end": "18:00", "available": 5 },
-        { "start": "18:00", "end": "00:00", "available": 15 },
+        { "start": "18:00", "end": "24:00", "available": 15 },
         { "start": "00:00", "end": "08:00", "available": 15 }
       ],
       "scheduleHoliday": [
-        { "start": "00:00", "end": "00:00", "available": 37 }
+        { "start": "00:00", "end": "24:00", "available": 37 }
       ]
     },
     {
@@ -444,11 +444,11 @@
         { "start": "08:00", "end": "08:30", "available": 15 },
         { "start": "08:30", "end": "16:30", "available": 0 },
         { "start": "16:30", "end": "18:00", "available": 5 },
-        { "start": "18:00", "end": "00:00", "available": 10 },
+        { "start": "18:00", "end": "24:00", "available": 10 },
         { "start": "00:00", "end": "08:00", "available": 10 }
       ],
       "scheduleHoliday": [
-       { "start": "00:00", "end": "00:00", "available": 15 }
+       { "start": "00:00", "end": "24:00", "available": 15 }
       ]
     },
     {
@@ -466,11 +466,11 @@
         { "start": "09:00", "end": "15:30", "available": 0 },
         { "start": "15:30", "end": "16:30", "available": 10 },
         { "start": "16:30", "end": "18:00", "available": 25 },
-        { "start": "18:00", "end": "00:00", "available": 40 },
+        { "start": "18:00", "end": "24:00", "available": 40 },
         { "start": "00:00", "end": "08:00", "available": 40 }
       ],
       "scheduleHoliday": [
-       { "start": "00:00", "end": "00:00", "available": 100 }
+       { "start": "00:00", "end": "24:00", "available": 100 }
       ]
     },
     {
@@ -485,11 +485,11 @@
       "scheduleSemester": [
         { "start": "08:00", "end": "08:30", "available": 8 },
         { "start": "08:30", "end": "18:00", "available": 0 },
-        { "start": "18:00", "end": "080:00", "available": 3 },
+        { "start": "18:00", "end": "08:00", "available": 3 },
         { "start": "00:00", "end": "08:00", "available": 3 }
       ],
       "scheduleHoliday": [
-       { "start": "00:00", "end": "00:00", "available": 10 }
+       { "start": "00:00", "end": "24:00", "available": 10 }
       ]
     },
     {
@@ -505,7 +505,7 @@
         { "start": "08:00", "end": "08:00", "available": 40 }
       ],
       "scheduleHoliday": [
-       { "start": "00:00", "end": "00:00", "available": 40 }
+       { "start": "00:00", "end": "24:00", "available": 40 }
       ]
     },
     {
@@ -521,7 +521,7 @@
         { "start": "08:00", "end": "08:00", "available": 180 }
       ],
       "scheduleHoliday": [
-       { "start": "00:00", "end": "00:00", "available": 180 }
+       { "start": "00:00", "end": "24:00", "available": 180 }
       ]
     },
     {
@@ -538,11 +538,11 @@
         { "start": "08:30", "end": "09:00", "available": 3 },
         { "start": "09:00", "end": "16:30", "available": 0 },
         { "start": "16:30", "end": "18:00", "available": 3 },
-        { "start": "18:00", "end": "00:00", "available": 8 },
+        { "start": "18:00", "end": "24:00", "available": 8 },
         { "start": "00:00", "end": "08:00", "available": 8 }
       ],
       "scheduleHoliday": [
-        { "start": "00:00", "end": "00:00", "available": 24 }
+        { "start": "00:00", "end": "24:00", "available": 24 }
       ]
     },
     {
@@ -559,11 +559,11 @@
         { "start": "08:30", "end": "15:30", "available": 5 },
         { "start": "15:30", "end": "16:30", "available": 10 },
         { "start": "16:30", "end": "18:00", "available": 15 },
-        { "start": "18:00", "end": "00:00", "available": 25 },
+        { "start": "18:00", "end": "24:00", "available": 25 },
         { "start": "00:00", "end": "08:00", "available": 25 }
       ],
       "scheduleHoliday": [
-        { "start": "00:00", "end": "00:00", "available": 27 }
+        { "start": "00:00", "end": "24:00", "available": 27 }
       ]
     },
     {
@@ -580,11 +580,11 @@
         { "start": "08:30", "end": "15:30", "available": 0 },
         { "start": "15:30", "end": "16:30", "available": 10 },
         { "start": "16:30", "end": "18:00", "available": 15 },
-        { "start": "18:00", "end": "00:00", "available": 20 },
+        { "start": "18:00", "end": "24:00", "available": 20 },
         { "start": "00:00", "end": "08:00", "available": 20 }
       ],
       "scheduleHoliday": [
-        { "start": "00:00", "end": "00:00", "available": 30 }
+        { "start": "00:00", "end": "24:00", "available": 30 }
       ]
     },
     {
@@ -602,11 +602,11 @@
         { "start": "09:00", "end": "09:30", "available": 10 },
         { "start": "09:30", "end": "16:30", "available": 5 },
         { "start": "16:30", "end": "18:00", "available": 10 },
-        { "start": "18:00", "end": "00:00", "available": 20 },
+        { "start": "18:00", "end": "24:00", "available": 20 },
         { "start": "00:00", "end": "08:00", "available": 20 }
       ],
       "scheduleHoliday": [
-        { "start": "00:00", "end": "00:00", "available": 40 }
+        { "start": "00:00", "end": "24:00", "available": 40 }
       ]
     },
     {
@@ -623,11 +623,11 @@
         { "start": "08:30", "end": "15:30", "available": 1 },
         { "start": "15:30", "end": "16:30", "available": 4 },
         { "start": "16:30", "end": "18:00", "available": 6 },
-        { "start": "18:00", "end": "00:00", "available": 9 },
+        { "start": "18:00", "end": "24:00", "available": 9 },
         { "start": "00:00", "end": "08:00", "available": 9 }
       ],
       "scheduleHoliday": [
-       { "start": "00:00", "end": "00:00", "available": 18 }
+       { "start": "00:00", "end": "24:00", "available": 18 }
       ]
     },
     {
@@ -644,11 +644,11 @@
         { "start": "08:30", "end": "09:00", "available": 20 },
         { "start": "09:00", "end": "16:30", "available": 10 },
         { "start": "16:30", "end": "18:00", "available": 20 },
-        { "start": "18:00", "end": "00:00", "available": 30 },
+        { "start": "18:00", "end": "24:00", "available": 30 },
         { "start": "00:00", "end": "08:00", "available": 30 }
       ],
       "scheduleHoliday": [
-       { "start": "00:00", "end": "00:00", "available": 40 }
+       { "start": "00:00", "end": "24:00", "available": 40 }
       ]
     },
     {
@@ -664,11 +664,11 @@
         { "start": "08:00", "end": "08:30", "available": 10 },
         { "start": "08:30", "end": "16:30", "available": 0 },
         { "start": "16:30", "end": "18:00", "available": 3 },
-        { "start": "18:00", "end": "00:00", "available": 7 },
+        { "start": "18:00", "end": "24:00", "available": 7 },
         { "start": "00:00", "end": "08:00", "available": 7 }
       ],
       "scheduleHoliday": [
-        { "start": "00:00", "end": "00:00", "available": 10 }
+        { "start": "00:00", "end": "24:00", "available": 10 }
       ]
     },
     {
@@ -684,11 +684,11 @@
         { "start": "08:00", "end": "08:30", "available": 15 },
         { "start": "08:30", "end": "16:30", "available": 0 },
         { "start": "16:30", "end": "18:00", "available": 5 },
-        { "start": "18:00", "end": "00:00", "available": 10 },
+        { "start": "18:00", "end": "24:00", "available": 10 },
         { "start": "00:00", "end": "08:00", "available": 10 }
       ],
       "scheduleHoliday": [
-        { "start": "00:00", "end": "00:00", "available": 20 }
+        { "start": "00:00", "end": "24:00", "available": 20 }
       ]
     },
     {
@@ -703,7 +703,7 @@
       "scheduleSemester": [
         { "start": "08:00", "end": "08:30", "available": 80 },
         { "start": "08:30", "end": "18:00", "available": 50 },
-        { "start": "18:00", "end": "00:00", "available": 80 },
+        { "start": "18:00", "end": "24:00", "available": 80 },
         { "start": "00:00", "end": "08:00", "available": 80 }
       ],
       "scheduleHoliday": [
@@ -724,7 +724,7 @@
         { "start": "08:30", "end": "09:00", "available": 20 },
         { "start": "09:00", "end": "16:30", "available": 10 },
         { "start": "16:30", "end": "18:00", "available": 20 },
-        { "start": "18:00", "end": "00:00", "available": 40 },
+        { "start": "18:00", "end": "24:00", "available": 40 },
         { "start": "00:00", "end": "08:00", "available": 40 }
       ],
       "scheduleHoliday": [
@@ -744,7 +744,7 @@
         { "start": "08:00", "end": "08:30", "available": 15 },
         { "start": "08:30", "end": "16:30", "available": 0 },
         { "start": "16:30", "end": "18:00", "available": 4 },
-        { "start": "18:00", "end": "00:00", "available": 9 },
+        { "start": "18:00", "end": "24:00", "available": 9 },
         { "start": "00:00", "end": "08:00", "available": 9 }
       ],
       "scheduleHoliday": [
@@ -764,7 +764,7 @@
         { "start": "08:00", "end": "08:30", "available": 8 },
         { "start": "08:30", "end": "16:30", "available": 5 },
         { "start": "16:30", "end": "18:00", "available": 6 },
-        { "start": "18:00", "end": "00:00", "available": 8 },
+        { "start": "18:00", "end": "24:00", "available": 8 },
         { "start": "00:00", "end": "08:00", "available": 8 }
       ],
       "scheduleHoliday": [
@@ -786,7 +786,7 @@
         { "start": "09:00", "end": "09:30", "available": 2 },
         { "start": "09:30", "end": "16:30", "available": 1 },
         { "start": "16:30", "end": "18:00", "available": 2 },
-        { "start": "18:00", "end": "00:00", "available": 3 },
+        { "start": "18:00", "end": "24:00", "available": 3 },
         { "start": "00:00", "end": "08:00", "available": 3 }
       ],
       "scheduleHoliday": [
@@ -807,7 +807,7 @@
         { "start": "08:30", "end": "09:00", "available": 60 },
         { "start": "09:00", "end": "16:30", "available": 40 },
         { "start": "16:30", "end": "18:00", "available": 50 },
-        { "start": "18:00", "end": "00:00", "available": 60 },
+        { "start": "18:00", "end": "24:00", "available": 60 },
         { "start": "00:00", "end": "08:00", "available": 60 }
       ],
       "scheduleHoliday": [
@@ -828,7 +828,7 @@
         { "start": "08:30", "end": "09:00", "available": 70 },
         { "start": "09:00", "end": "16:30", "available": 60 },
         { "start": "16:30", "end": "18:00", "available": 70 },
-        { "start": "18:00", "end": "00:00", "available": 75 },
+        { "start": "18:00", "end": "24:00", "available": 75 },
         { "start": "00:00", "end": "08:00", "available": 75 }
       ],
       "scheduleHoliday": [
@@ -850,11 +850,11 @@
         { "start": "09:00", "end": "15:30", "available": 0 },
         { "start": "15:30", "end": "16:00", "available": 10 },
         { "start": "16:30", "end": "18:00", "available": 20 },
-        { "start": "18:00", "end": "00:00", "available": 40 },
+        { "start": "18:00", "end": "24:00", "available": 40 },
         { "start": "00:00", "end": "08:00", "available": 40 }
       ],
       "scheduleHoliday": [
-        { "start": "08:00", "end": "00:00", "available": 50 }
+        { "start": "08:00", "end": "24:00", "available": 50 }
       ]
     },
     {
@@ -871,7 +871,7 @@
         { "start": "08:30", "end": "09:00", "available": 50 },
         { "start": "09:00", "end": "16:30", "available": 40 },
         { "start": "16:30", "end": "18:00", "available": 70 },
-        { "start": "18:00", "end": "00:00", "available": 100 },
+        { "start": "18:00", "end": "24:00", "available": 100 },
         { "start": "00:00", "end": "08:00", "available": 100 }
       ],
       "scheduleHoliday": [

@@ -7,7 +7,7 @@ body {
     background: #f5f5f5;
 }
 
-  /* 导航栏容器 */
+  /* Navigation Bar */
   .nav-bar {
           position: fixed;
           top: 0;
@@ -32,7 +32,7 @@ body {
       .nav-logo:hover {
           transform: scale(1.05);
       }
-       /* 中间标题 */
+       /* Middle Title */
        .nav-title {
           flex-grow: 1;
           text-align: center;
@@ -42,12 +42,12 @@ body {
           
          
           white-space: nowrap;
-          min-width: 150px; /* 保证最小显示宽度 */
+          min-width: 150px; /* Minimum Display Width 最小显示的宽度 */
           /*overflow: hidden;*/
           text-overflow: ellipsis;
       }
 
-      /* 右侧控制区 */
+      /* Right Menu */
       .nav-controls {
           flex-shrink: 0;
           display: flex;
@@ -55,7 +55,7 @@ body {
           gap: 15px;
       }
 
-      /* 登录按钮 */
+      /* Login */
       /* .login-btn {
           padding: 8px 20px;
           border-radius: 20px;
@@ -70,7 +70,7 @@ body {
           background: #357abd;
       } */
 
-      /* 折叠菜单 */
+      /* Fold Menu 折叠菜单 */
       .menu-toggle {
           display: none;
           width: 30px;
@@ -86,7 +86,7 @@ body {
           transition: all 0.3s;
       }
 
-      /* 下拉菜单 */
+      /* Drop down 下拉菜单 */
       .dropdown-menu {
           position: absolute;
           top: 100%;
@@ -98,7 +98,7 @@ body {
           min-width: 180px;
           z-index: 1001;
           
-      }
+      }     
       .dropdown-menu.show {
           display: block;
       }
@@ -112,6 +112,60 @@ body {
       .dropdown-menu a:hover {
           background: #f5f5f5;
       }
+/* Sub-Menu 子菜单容器 */
+.submenu {
+  position: relative;
+}
+
+/* Sub Menu 子菜单按钮 */
+.submenu-toggle {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  padding: 12px 20px;
+  color: #333;
+}
+
+/* s m   子菜单内容默认隐藏 */
+.submenu-content {
+  display: none;
+  position: absolute;
+  right: 100%; /* 桌面端：出现在父元素左侧 */
+  top: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  min-width: 180px;
+  z-index: 1002;
+}
+
+/* Computer Display Mouse Pointer Hover 桌面端：鼠标悬浮或 active 时显示 */
+.submenu:hover .submenu-content,
+.submenu-content.active {
+  display: block;
+}
+
+/* 移动端优化 */
+@media (max-width: 500px) {
+  .submenu-content {
+      /* 取消绝对定位，使其成为正常文档流 */
+      position: static;
+      top: auto;
+      right: auto;
+      /* 增加边框或间距区分 */
+      border-top: 1px solid #eee;
+      margin-left: 20px; /* 缩进子菜单 */
+  }
+  /* 当父容器处于 active 状态时显示子菜单 */
+  .submenu.active .submenu-content {
+      display: block;
+  }
+}
+
+    
        /* 响应式设计 */
        @media (max-width: 768px) {
           .nav-bar {
@@ -147,8 +201,34 @@ body {
           } */
       }
 
+  @media (max-width: 768px) {
+    #compass-container {
+      position: fixed;
+      left: 30px;
+      bottom: 130px;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* Compass Pic size 调整指南针图片尺寸 */
+    .compass-img {
+      display: block;
+      width: 18px;
+      border-radius: 50%;
+      font-size: 24px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+  }
+  
+ 
 
-  /* 地图容器 */
+
+  /* Map container 地图容器 */
   #map-wrapper {
     position: absolute;
     top: 60px;
@@ -161,17 +241,17 @@ body {
 
   #map-container {
     position: relative;
-    width: 4000px;    /* 地图宽度 */
-    height: 4800px;   /* 地图高度 */
+    width: 4000px;   
+    height: 4800px;  
     background-image: url('university-map.webp');
     background-size: contain;
     transform-origin: 0 0;
     cursor: grab;
-    /* 平滑的缩放动画 */
+    /* Smooth */
     transition: transform 0.3s ease-out;
   }
 
-  /* 热力图点样式 */
+  /* Heatmap热力图点样式 */
   .heat-point {
     position: absolute;
     width: 100px;
@@ -191,7 +271,7 @@ body {
     100% { transform: translate(-50%, -50%) scale(1); }
   }
 
-  /* 信息框样式 */
+  /*info box  信息框样式 */
   .info-window {
     position: fixed;
     background: #ffffff;
@@ -225,7 +305,7 @@ body {
     line-height: 18px;
   }
 
-  /* 信息框内部的导航按钮 */
+  /* info box 信息框内部的导航按钮 */
   .direction-button {
     background-color: #4285F4;
     color: white;
@@ -282,7 +362,7 @@ body {
   }
 
 
-  /* 左下角缩放控制按钮 */
+ 
   #zoom-controls {
     position: fixed;
     left: 20px;
@@ -307,7 +387,7 @@ body {
     transition: all 0.2s;
   }
 
-  /* 加载动画 */
+
   .loading {
     position: fixed;
     top: 50%;
@@ -320,7 +400,7 @@ body {
     border-radius: 8px;
   }
 
-  /* 响应式设计：移动端时信息框固定于底部居中，宽度占满，覆盖屏幕底部一半 */
+  /* info box style 响应式设计：移动端时信息框固定于底部居中，宽度占满，覆盖屏幕底部一半 */
   @media (max-width: 768px) {
     .info-window {
       left: 0 !important;
@@ -328,8 +408,8 @@ body {
       top: auto !important;
       bottom: 0 !important;
       width: 100% !important;
-      max-width: 100% !important; /* 覆盖默认的 max-width */
-      box-sizing: border-box;    /* 包括 padding 在内 */
+      max-width: 100% !important; 
+      box-sizing: border-box;  
       height: 50% !important;
       border-radius: 20px 20px 0 0;
       font-size: 16px;

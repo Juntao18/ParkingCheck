@@ -1,8 +1,7 @@
-// ============== 1. 导入 Firebase 模块 ==============
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
 import { getFirestore, collection, onSnapshot, doc, updateDoc } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore.js";
 
-// ============== 2. Firebase 配置与初始化 ==============
+//  Firebase Initial 初始化
 const firebaseConfig = {
   apiKey: "AIzaSyC_RFkbb9opYta3RgyCfO-RP0pVfcDNB94",
   authDomain: "parkingcheck-83318.firebaseapp.com",
@@ -15,12 +14,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// ============== 3. 地图相关全局变量 ==============
-var SCHOOL_CENTER_X = 1928; // Map中心X像素坐标
-var SCHOOL_CENTER_Y = 2691; // Map中心Y像素坐标
+// Map Variables 地图-相关全局变量 
+var SCHOOL_CENTER_X = 1928;
+var SCHOOL_CENTER_Y = 2691; 
 
-var MAP_WIDTH = 4000;       // 地图宽度
-var MAP_HEIGHT = 4800;      // 地图高度
+var MAP_WIDTH = 4000;     
+var MAP_HEIGHT = 4800;   
 
 var INIT_SCALE = 0.5;
 
@@ -33,30 +32,26 @@ var isPinching = false;
 var initialPinchDistance = null;
 var initialPinchScale = null;
 
-// ============== 4. Firestore 数据存储与渲染 ==============
+//Firestore   数据存储，渲染
 let parkingData = {};
 
-/**
- * 根据 parkingData 对象渲染所有热力图点
- * 每次 onSnapshot 有更新时调用
- */
+//根据 parkingData 对象渲染所有热力图点，每次 onSnapshot 有更新时调用
+//Render all heat map points according to the parkingData object, called every time onSnapshot is updated
 function renderHeatPoints() {
   const container = document.getElementById('map-container');
   if (!container) return;
 
-  // 清空旧数据
+  // Clean old data 清空旧数据
   container.innerHTML = '';
 
-  // 遍历所有停车场数据，创建热力图点
+  // Travel All parkdata，create Heatmap  遍历所有停车场数据，创建热力图点
   Object.values(parkingData).forEach((data) => {
     const heatPoint = createHeatPoint(data);
     container.appendChild(heatPoint);
   });
 }
 
-/**
- * 创建单个热力图点 DOM
- */
+//Create single Heatmap point 创建单个热力图点 DOM
 function createHeatPoint(data) {
   const heatPoint = document.createElement('div');
   heatPoint.className = 'heat-point';
@@ -64,7 +59,7 @@ function createHeatPoint(data) {
   heatPoint.style.top = data.y + 'px';
   updateHeatPointColor(heatPoint, data);
 
-  // 点击后显示信息窗口
+  // Click show infomation box 点击后显示信息窗口
   heatPoint.addEventListener('click', function(event) {
     event.stopPropagation();
     showInfoWindow(data, event.clientX, event.clientY);
@@ -74,9 +69,8 @@ function createHeatPoint(data) {
   return heatPoint;
 }
 
-/**
- * 根据可用率更新热力图点颜色
- */
+// 根据可用率更新热力图点颜色
+//Update heatmap point colors based on availability
 function updateHeatPointColor(element, data) {
   const ratio = data.available / data.capacity;
   element.style.backgroundColor = ratio > 0.6 ? '#4CAF50'
@@ -85,10 +79,10 @@ function updateHeatPointColor(element, data) {
 }
 
 /**
- * 显示信息窗口
+ * shows info window 显示信息窗口
  */
 function showInfoWindow(data, x, y) {
-  closeInfoWindow(); // 先关闭已存在的
+  closeInfoWindow(); //Close the existing  先关闭已存在的
 
   const infoWindow = document.createElement('div');
   infoWindow.className = 'info-window';
@@ -110,8 +104,9 @@ function showInfoWindow(data, x, y) {
   document.body.appendChild(infoWindow);
 
   // 定位信息窗口
+  //Position information window
   if (window.innerWidth <= 768) {
-    // 移动端：固定底部
+    // Mobile 移动端：固定底部
     infoWindow.style.left = '0';
     infoWindow.style.right = '0';
     infoWindow.style.top = 'auto';
@@ -125,7 +120,8 @@ function showInfoWindow(data, x, y) {
     adjustInfoPosition(infoWindow, x, y);
   }
 
-  // 为导航按钮添加点击事件
+  // Google map 为导航按钮添加点击事件
+  //Add click events to navigation buttons
   const dirBtn = infoWindow.querySelector('.direction-button');
   if (dirBtn) {
     dirBtn.addEventListener('click', function(event) {
@@ -137,14 +133,14 @@ function showInfoWindow(data, x, y) {
   }
 
   // 延时绑定点击外部关闭信息窗口事件
+  //Delay binding click external close information window event
+
   setTimeout(function() {
     document.addEventListener('click', closeInfoWindow);
   }, 10);
 }
 
-/**
- * 关闭所有信息窗口
- */
+//close all windws
 function closeInfoWindow() {
   const infoWindows = document.querySelectorAll('.info-window');
   infoWindows.forEach((win) => {
@@ -154,11 +150,11 @@ function closeInfoWindow() {
   });
   document.removeEventListener('click', closeInfoWindow);
 }
-window.closeInfoWindow = closeInfoWindow; // 让外部HTML可访问
+window.closeInfoWindow = closeInfoWindow; 
 
-/**
- * 调整信息窗口位置，确保不超出屏幕
- */
+// 调整信息窗口位置，确保不超出屏幕
+//Adjust the information window position to ensure it does not exceed the screen
+
 function adjustInfoPosition(element, x, y) {
   const rect = element.getBoundingClientRect();
   x = Math.max(10, Math.min(x, window.innerWidth - rect.width - 10));
@@ -167,9 +163,9 @@ function adjustInfoPosition(element, x, y) {
   element.style.top = y + 'px';
 }
 
-/**
- * 用户更新：弹窗输入新的可用车位数并写入 Firestore
- */
+//用户更新：弹窗输入新的可用车位数并写入 Firestore
+//User update: Enter new available parking spaces in the pop-up window and write to Firestore
+
 window.submitUserUpdate = async function(parkingId) {
   const newAvailable = parseInt(prompt("Enter available parking spaces："), 10);
   if (!isNaN(newAvailable)) {
@@ -184,6 +180,7 @@ window.submitUserUpdate = async function(parkingId) {
     // alert("Please enter the correct number");
   }
 };
+
 //////////+——加减车位
 window.updatePlus = async function(parkingId) {
     try {
@@ -213,11 +210,13 @@ window.updatePlus = async function(parkingId) {
   
 
 // 地图拖拽与缩放逻辑 
+//Map drag and zoom logic
 function initMapInteraction() {
   const container = document.getElementById('map-container');
   if (!container) return;
 
   // 鼠标拖拽
+  //Mouse drag
   container.addEventListener('mousedown', function(e) {
     if (!isPinching) {
       isDragging = true;
@@ -241,6 +240,8 @@ function initMapInteraction() {
   });
 
   // 触摸事件（单指拖拽 & 双指缩放）
+  //Touch events (single-finger drag & double-finger zoom)
+
   container.addEventListener('touchstart', function(e) {
     if (e.touches.length === 2) {
       isPinching = true;
@@ -255,16 +256,31 @@ function initMapInteraction() {
 
   container.addEventListener('touchmove', function(e) {
     if (e.touches.length === 2) {
-      const currentDistance = getDistance(e.touches[0], e.touches[1]);
-      scale = initialPinchScale * (currentDistance / initialPinchDistance);
-      applyMapTransform();
-      e.preventDefault();
+        const currentDistance = getDistance(e.touches[0], e.touches[1]);
+        
+        // 计算两指中心点
+        const touchCenterX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+        const touchCenterY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+        const rect = container.getBoundingClientRect();
+        const pointerX = touchCenterX - rect.left;
+        const pointerY = touchCenterY - rect.top;
+        
+        const prevScale = scale;
+        scale = initialPinchScale * (currentDistance / initialPinchDistance);
+        
+        // 调整平移量，保持两指中心位置固定
+        posX = pointerX - (scale / prevScale) * (pointerX - posX);
+        posY = pointerY - (scale / prevScale) * (pointerY - posY);
+        
+        applyMapTransform();
+        e.preventDefault();
     } else if (!isPinching && e.touches.length === 1) {
       posX = e.touches[0].clientX - startX;
       posY = e.touches[0].clientY - startY;
       applyMapTransform();
     }
-  }, { passive: false });
+}, { passive: false });
+
 
   container.addEventListener('touchend', function(e) {
     if (e.touches.length < 2) {
@@ -275,15 +291,32 @@ function initMapInteraction() {
   });
 
   // 鼠标滚轮缩放
+  //Mouse wheel zoom
   container.addEventListener('wheel', function(e) {
     e.preventDefault();
+    // 获取容器相对于视口的位置Get the position of the container relative to the viewport
+    const rect = container.getBoundingClientRect();
+    // 计算鼠标在地图容器内的坐标Calculate the coordinates of the mouse within the map container
+    const pointerX = e.clientX - rect.left;
+    const pointerY = e.clientY - rect.top;
+
+    // 保存之前的缩放比例Save the previous zoom ratio
+    const prevScale = scale;
+    
+    // 根据滚轮方向更新缩放比例Update zoom ratio based on scroll wheel direction
     if (e.deltaY > 0) {
       scale *= 0.9;
     } else {
       scale = Math.min(scale * 1.1, 3);
     }
+    
+    // Adjust the pan amount according to the new zoom level, making sure the pointer position remains unchanged根据新的缩放比例调整平移量，确保指针位置不变
+    posX = pointerX - (scale / prevScale) * (pointerX - posX);
+    posY = pointerY - (scale / prevScale) * (pointerY - posY);
+    
     applyMapTransform();
-  });
+});
+
 }
 
 function getDistance(touch1, touch2) {
@@ -296,7 +329,7 @@ function applyMapTransform() {
   const container = document.getElementById('map-container');
   if (!container) return;
 
-  // 计算放大后地图的最大平移值
+  // Calculate the maximum translation value of the map after zooming in计算放大后地图的最大平移值
   const maxX = (MAP_WIDTH * scale - window.innerWidth) * -1;
   const maxY = (MAP_HEIGHT * scale - window.innerHeight + 60) * -1;
 
@@ -308,15 +341,24 @@ function applyMapTransform() {
 
  // 缩放按钮事件
  document.getElementById('zoom-in').addEventListener('click', function(e) {
-    scale = Math.min(scale * 1.1, 3);
-    applyMapTransform();
-  });
-  document.getElementById('zoom-out').addEventListener('click', function(e) {
-    scale = scale * 0.9;
-    applyMapTransform();
-  });
+  scale = Math.min(scale * 1.1, 3);
+  updateZoomCenter();
+  applyMapTransform();
+});
+document.getElementById('zoom-out').addEventListener('click', function(e) {
+  scale = scale * 0.9;
+  updateZoomCenter();
+  applyMapTransform();
+});
 
-// ============== 6. 设置地图初始位置 ==============
+function updateZoomCenter() {
+  const centerX = SCHOOL_CENTER_X * scale;
+  const centerY = SCHOOL_CENTER_Y * scale;
+  posX = (window.innerWidth / 2) - centerX;
+  posY = (window.innerHeight / 2) - centerY;
+}
+
+
 function setInitialPosition() {
   const centerX = SCHOOL_CENTER_X * scale;
   const centerY = SCHOOL_CENTER_Y * scale;
@@ -324,14 +366,13 @@ function setInitialPosition() {
   posY = (window.innerHeight / 2 - centerY);
 }
 
-// ============== 7. 页面加载时执行逻辑 ==============
+
 window.addEventListener('load', function() {
-  // 先做地图初始化
   setInitialPosition();
   applyMapTransform();
   initMapInteraction();
 
-  // 启动 Firestore 监听
+  // 启动 Firestore monitor 监听
   onSnapshot(collection(db, 'parkingLots'), (snapshot) => {
     snapshot.docChanges().forEach(change => {
       if (change.type === "added" || change.type === "modified") {
@@ -340,7 +381,7 @@ window.addEventListener('load', function() {
         delete parkingData[change.doc.id];
       }
     });
-    // 数据更新后重新渲染热力图点
+    // Re-render heat map points after data update数据更新后重新渲染热力图点
     renderHeatPoints();
   });
 
@@ -350,8 +391,9 @@ window.addEventListener('load', function() {
     loadingEl.style.display = 'none';
   }
 
-  // 调用筛选功能初始化（来自 filter.js）
+  // Call the filter function to initialize调用筛选功能初始化
   if (typeof initFilter === 'function') {
     initFilter();
   }
 });
+

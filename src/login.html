@@ -6,7 +6,6 @@
   <title>Login|ParkingCheck</title>
   <link rel="shortcut icon" href="//moodle.maynoothuniversity.ie/pluginfile.php/1/theme_catawesome/favicon/1733296533/favicon.ico"/>
   <style>
-    /* 重置样式 */
     * {
       margin: 0;
       padding: 0;
@@ -16,7 +15,7 @@
       height: 100%;
       font-family: Arial, sans-serif;
     }
-    /* 背景图片 */
+    /* background */
     body {
       background: url('img/login.jpg') no-repeat center center fixed;
       background-size: cover;
@@ -35,7 +34,7 @@
       width: 130px;
       height: 60px;
     }
-    /* 大屏桌面：Logo 固定在左上角 */
+    /* Logo 固定在左上角 */
     @media (min-width: 481px) {
       .logo {
         position: absolute;
@@ -45,7 +44,7 @@
         text-align: left;
       }
     }
-    /* 登录容器 */
+    /* login 登录容器 */
     .login-container {
       background: rgba(255, 255, 255, 0.9);
       width: 90%;
@@ -54,7 +53,7 @@
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.158);
     }
-    /* 登录框内标题 */
+    /* logo in 登录框内标题 */
     .header {
       text-align: center;
       margin-bottom: 20px;
@@ -64,7 +63,7 @@
       color: #0073b1; /* LinkedIn蓝 */
       margin-top: 10px;
     }
-    /* 表单样式 */
+    /* form style  */
     form {
       display: flex;
       flex-direction: column;
@@ -94,7 +93,7 @@
     form button:hover {
       background-color: #005983;
     }
-    /* “忘记密码”与“注册”链接 */
+    /* forgot password and sign up  */
     .options {
       display: flex;
       justify-content: space-between;
@@ -108,7 +107,7 @@
     .options a:hover {
       text-decoration: underline;
     }
-    /* 谷歌一键登录 */
+    /* Google login 谷歌一键登录 */
     .google-login {
       margin-top: 30px;
       display: flex;
@@ -122,10 +121,9 @@
       padding: 10px;
       background-color: #fff;
       border: 1px solid #ccc;
-      border-radius: 20px;  /* 边角更圆润 */
+      border-radius: 20px;  /* 边角变圆润 */
       font-size: 16px;
       cursor: pointer;
-      /* 若需要调整长度和宽度，可以直接添加如下属性，例如： */
       width: 95%;
       max-width: 400px;
     }
@@ -137,7 +135,7 @@
     .google-login button:hover {
       background-color: #f7f7f7;
     }
-    /* 移动端适配 */
+    /* mobile 移动端适配 */
     @media (max-width: 480px) {
       .login-container {
         padding: 15px;
@@ -154,7 +152,7 @@
         font-size: 14px;
         padding: 8px;
       }
-      /* 移动端：Logo 居中显示且在登录框上方 */
+      /* mobile 移动端：Logo 居中显示且在登录框上方 */
       .logo {
         position: static;
         margin-bottom: 20px;
@@ -168,11 +166,11 @@
     <a href="/index.html"><img src="logo.webp" alt="Logo"></a>
   </div>
   <div class="login-container">
-    <!-- 登录框内标题 -->
+
     <div class="header">
       <h1>ParkingCheck</h1>
     </div>
-    <!-- 登录表单 -->
+
     <form onsubmit="login(); return false;">
       <label for="email">Email</label>
       <input type="email" id="email" placeholder="Please enter your email" required>
@@ -187,7 +185,7 @@
         <a href="signup.html">Sign up</a>
       </div>
     </form>
-    <!-- 谷歌一键登录按钮 -->
+
     <div class="google-login">
       <button type="button" onclick="googleLogin()">
         <img src="img/G.png" alt="Google Logo">
@@ -212,18 +210,18 @@
       measurementId: "G-5E42HCJV4B"
     };
 
-    // 初始化 Firebase
+    // Initial 初始化 Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
     const auth = getAuth(app);
 
-    // 登录函数
+    // Login function 登录函数
     window.login = function() {
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-          // 成功后可跳转或其他处理，例如：
+         
           window.location.href = "/index.html";
         })
         .catch((error) => {
@@ -231,21 +229,21 @@
         });
     };
 
-    // 忘记密码函数
+    // forgot password fuction 忘记密码函数
     window.resetPassword = function() {
-      const email = prompt("请输入您的注册邮箱：");
+      const email = prompt("Please enter your Email：");
       if (email) {
         sendPasswordResetEmail(auth, email)
           .then(() => {
-            alert("密码重置邮件已发送！");
+            alert("The password reset email has been sent!");
           })
           .catch((error) => {
-            alert("发送重置邮件错误：" + error.message);
+            alert("Error" + error.message);
           });
       }
     };
 
-    // 谷歌登录函数
+    // Google login function 
     window.googleLogin = function() {
       const provider = new GoogleAuthProvider();
       signInWithPopup(auth, provider)
