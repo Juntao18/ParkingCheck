@@ -1,15 +1,14 @@
 {
   "projects": {
-    "default": "parkingcheck-83318"
+    "default": "your-project-id"
   },
   "targets": {
-    "parkingcheck-83318": {
+    "your-project-id": {
       "hosting": {
         "parkingcheck": [
           "parkingcheck"
         ]
       }
     }
-  },
-  "etags": {}
+  }
 }
