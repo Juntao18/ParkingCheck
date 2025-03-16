@@ -7,9 +7,9 @@
     'charge': ['EV Charge Point']
   };
   
-  // Initial Filter 初始化筛选功能
+  // Initial Filter  初始化筛选功能
   function initFilter() {
-    // 桌面端按钮
+    // It is for PC Device display 三 button ，电脑端大屏幕  三按钮
     document.querySelectorAll('.filter-btn:not(#mobile-filter-toggle)').forEach(btn => {
       btn.addEventListener('click', function() {
         filterParking(this.dataset.type);
@@ -21,7 +21,7 @@
     const mobileToggle = document.getElementById('mobile-filter-toggle');
     const dropdown = document.getElementById('filterDropdown');
     
-    // Mobile Menu 移动端菜单
+    // Mobile Menu  移动端菜单
     const mobileItems = ['all','visit', 'staff', 'student', 'charge'].map(type => {
       const item = document.createElement('button');
       item.className = 'filter-item';
@@ -38,17 +38,17 @@
       dropdown.appendChild(item);
     });
   
-    // Switch Menu切换移动菜单
+    // Switch Menu   切换移动菜单
     mobileToggle.addEventListener('click', function(e) {
       e.stopPropagation();
       dropdown.classList.toggle('show');
     });
   
-    // Close when Click othe place点击外部关闭
+    // Close when Click othe place   点击外部关闭
     document.addEventListener('click', () => dropdown.classList.remove('show'));
   }
   
-  // Filter 筛选逻辑
+  // Filter   筛选
   function filterParking(type) {
     const permits = filterMap[type];
     document.querySelectorAll('.heat-point').forEach(point => {

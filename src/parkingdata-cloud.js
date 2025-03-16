@@ -14,7 +14,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Map Variables 地图-相关全局变量 
+// Map Variables 地图-相关的全局变量 
 var SCHOOL_CENTER_X = 1928;
 var SCHOOL_CENTER_Y = 2691; 
 
@@ -329,7 +329,7 @@ function applyMapTransform() {
   const container = document.getElementById('map-container');
   if (!container) return;
 
-  // Calculate the maximum translation value of the map after zooming in计算放大后地图的最大平移值
+  // Calculate the maximum translation value of the map after zooming in   计算放大后地图的最大平移值
   const maxX = (MAP_WIDTH * scale - window.innerWidth) * -1;
   const maxY = (MAP_HEIGHT * scale - window.innerHeight + 60) * -1;
 
@@ -339,7 +339,7 @@ function applyMapTransform() {
   container.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
 }
 
- // 缩放按钮事件
+ // Zoom-in  缩放按钮事件
  document.getElementById('zoom-in').addEventListener('click', function(e) {
   scale = Math.min(scale * 1.1, 3);
   updateZoomCenter();
